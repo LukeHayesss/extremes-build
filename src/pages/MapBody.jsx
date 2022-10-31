@@ -61,7 +61,8 @@ const MapBody = () => {
 
       // const min = georaster.mins[0];
       // const range = georaster.ranges[0];
-    //   const max = georaster.maxs[0];
+      // const max = georaster.maxs[0];
+       
     
     // available color scales can be found by running console.log(chroma.brewer);
     console.log("Chroma Color", chroma.brewer);

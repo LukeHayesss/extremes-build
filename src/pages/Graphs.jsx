@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 
 // {/* hide the graphs on default, autoscroll into view when map clicked */}
