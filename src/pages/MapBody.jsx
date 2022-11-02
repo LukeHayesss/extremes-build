@@ -40,12 +40,23 @@ import {
 import chroma from 'chroma-js';
 import * as parseGeoraster from 'georaster-layer-for-leaflet';
 import GeoRasterLayer from 'georaster-layer-for-leaflet';
+import AddLocate from "../components/AddLocate";
+import { Helmet } from 'react-helmet';
+import L from "leaflet";
+// import { useMap } from "react-leaflet"
+
+
 
 const MapBody = () => {
     const center = [0.0, 0.0];
 
-    // const layerControl = L.control.layers().addTo(map);
+  //   const map = L.map('map', {
+  //     center: [0, 0],
+  //     zoom: 2,
+  // });
 
+
+    // const layerControl = L.control.layers().addTo(map);
 
     const url_to_geotiff_file_tmin = "../data/tmin.tiff";
     const url_to_geotiff_file_tmax = "../data/tmax.tiff";
@@ -83,16 +94,23 @@ const MapBody = () => {
     console.log("Layer:", tmin_layer);
 
     // layerControl.addBaseLayer(tmin_layer, "Tmin");
-//     map.fitBounds(tmin_layer.getBounds());
+    // map.fitBounds(tmin_layer.getBounds());
 
 //     //rudimentary print out lat/long
-//     map.on('click', function (e) {
-//         alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-//     });
+    // map.on('click', function (e) {
+    //     alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+    // });
   });
 
 
     return (
+      <>
+      <Helmet>
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+    </Helmet>
         <MapContainer
         className="map"
         center={center}
@@ -160,7 +178,9 @@ const MapBody = () => {
     </LayersControl>
 {/* ////////////////// */}
 
+        <AddLocate/>
         </MapContainer>
+        </>
     );
 };
 export default MapBody;
