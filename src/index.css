@@ -13,5 +13,13 @@ code {
 }
 
 .map {
-  height: 66vh;
+  height: 80vh;
+  /* fits map centrally */
+  /* width: 52%; */
+  margin:0;
+  padding: 0;
+  width: 100%;
+}
+.leaflet-container {
+  background: #aad3df !important;
 }

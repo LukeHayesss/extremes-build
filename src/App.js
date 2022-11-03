@@ -13,6 +13,7 @@ import MoreInfo from './pages/MoreInfo';
 import Graphs from './pages/Graphs';
 import 'leaflet/dist/leaflet.css'
 import FooterBelow from './pages/FooterBelow';
+import Line from './pages/Line';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <MoreInfo/>
         {/* hide the graphs on default, autoscroll into view when map clicked */}
         <Graphs/>
+        <Line/>
         <BottomBar/>
         <Footer/>
         <FooterBelow/>

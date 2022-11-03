@@ -70,9 +70,9 @@ const MapBody = () => {
   .then(georaster => {
     console.log("georaster:", georaster);
 
-      // const min = georaster.mins[0];
-      // const range = georaster.ranges[0];
-      // const max = georaster.maxs[0];
+      const min = georaster.mins[0];
+      const range = georaster.ranges[0];
+      const max = georaster.maxs[0];
        
     
     // available color scales can be found by running console.log(chroma.brewer);
@@ -119,8 +119,11 @@ const MapBody = () => {
         doubleClickZoom={true}
         >
             <TileLayer
+            className="tile"
             attribution='&amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            //prevents map duplicating
+            noWrap={true}
             />
             
 {/* layers attempt     */}
