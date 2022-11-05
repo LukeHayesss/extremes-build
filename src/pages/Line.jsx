@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from 'd3';
 import { useD3 } from "../hooks/useD3";
-import data from '../data/temp_2022.csv'
+import data from '../data/temp_2022.csv';
 
 const Line = () => {
     const ref = useD3(() => {
@@ -22,7 +22,7 @@ const Line = () => {
 
         //read the data
         // d3.csv("../data/temp_2022.csv", function (data) {
-            d3.csv(data, function(data) {console.log(data, 'BANANA')})
+            d3.csv(data, function(data) {console.log(data, 'CSV Data')})
 
         // Add X axis --> it is a date format
         const x = d3
@@ -42,8 +42,7 @@ const Line = () => {
         .call(d3.axisLeft(y));
 
         //add svg
-        svg
-        .append("path")
+        svg.append("path")
         .datum(data)
         .attr("fill", "#cce5df")
         .attr("stroke", "none")
@@ -66,8 +65,6 @@ const Line = () => {
     )})
 
 
-
-
     return (
    <svg
    ref={ref}
@@ -86,3 +83,4 @@ const Line = () => {
      
 
 export default Line;
+

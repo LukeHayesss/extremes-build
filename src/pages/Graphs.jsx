@@ -36,5 +36,5 @@ font-size: 35px;
 `
 
 const Container = styled.div`
-height: 80vh;
+height: 20vh;
 `

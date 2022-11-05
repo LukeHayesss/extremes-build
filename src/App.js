@@ -13,7 +13,10 @@ import MoreInfo from './pages/MoreInfo';
 import Graphs from './pages/Graphs';
 import 'leaflet/dist/leaflet.css'
 import FooterBelow from './pages/FooterBelow';
-import Line from './pages/Line';
+// import Line from './pages/Line';
+import Heatmap from './pages/Heatmap';
+import HeatwaveHmap from './pages/HeatwaveHmap';
+import HeatmapInteractive from './pages/HeatmapInteractive';
 
 function App() {
   return (
@@ -32,7 +35,16 @@ function App() {
         <MoreInfo/>
         {/* hide the graphs on default, autoscroll into view when map clicked */}
         <Graphs/>
-        <Line/>
+
+        <LineHeader>This is a graph.</LineHeader>
+        <Heatmap/>
+
+        <LineHeader>This is a heatmap for heatwaves.</LineHeader>
+        <HeatwaveHmap/>        
+
+        <LineHeader>This is an interactive heatmap.</LineHeader>
+        <HeatmapInteractive/>        
+
         <BottomBar/>
         <Footer/>
         <FooterBelow/>
@@ -79,7 +91,13 @@ const StyledNavLink = styled(NavLink)`
     color: black;
     text-decoration: underline;
   }
-
 `;
+
+const LineHeader = styled.div`
+font-size: 40px;
+font-weight: bold;
+font-family: 'Rubik', sans-serif;
+/* margin-bottom: 100px; */
+`
 
 export default App;
