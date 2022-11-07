@@ -64,6 +64,7 @@ const node = document.createElement('div');
                 .attr("class", "pdf_curve")
                 .datum(density)
                 .style("fill", "darkGray")
+                .style("shape-rendering", "crispEdges")
                 .attr("d", d3.line()
                     .curve(d3.curveBasis)
                     .x(function (d) { return x(d[0]); })
