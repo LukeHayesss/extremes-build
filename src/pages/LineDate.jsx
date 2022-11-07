@@ -4,6 +4,7 @@ import React from 'react';
 import data5 from '../data/temp_current_year.csv';
 import data6 from '../data/bounds.csv';
 import data7 from '../data/fcvars.csv';
+import * as fc from 'd3fc';
 
 const node = document.createElement('div')
 
