@@ -82,7 +82,9 @@ const node = document.createElement('div');
             .attr("y", -30)
             .attr("text-anchor", "middle")
             .text("Heat and Cold Waves In " + new Date().getFullYear())
-            .style("font-size", '24px')
+            .style("font-family", "rubik")
+
+            .style("font-size", '34px')
             .style("font-weight", '700')
 
         // Build color scale

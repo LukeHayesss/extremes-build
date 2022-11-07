@@ -84,6 +84,7 @@ const node = document.createElement('div');
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
                 .text("Next 24h temperature: " + todayTempC.toFixed(1) + "°C")
+                .style("font-family", "rubik")
                 .style("font-size", "24px")
                 // .style("fill", "pink")
                 .classed('todayColor', true);
@@ -115,6 +116,7 @@ const node = document.createElement('div');
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
                 .text("5th percentile: " + d3.quantile(doyTempC, 0.05).toFixed(1) + "°C")
+                .style("font-family", "rubik")
                 .style("font-size", "24px")
 
             svg.append("text")
@@ -123,6 +125,7 @@ const node = document.createElement('div');
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
                 .text("95th percentile: " + d3.quantile(doyTempC, 0.95).toFixed(1) + "°C")
+                .style("font-family", "rubik")
                 .style("font-size", "24px")
 
             svg.append("text")
@@ -131,6 +134,7 @@ const node = document.createElement('div');
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
                 .text("50th percentile: " + d3.quantile(doyTempC, 0.5).toFixed(1) + "°C")
+                .style("font-family", "rubik")
                 .style("font-size", "24px")
                 // .style("fill", "pink")
 
@@ -140,7 +144,8 @@ const node = document.createElement('div');
                 .attr("x", width)
                 .attr("y", height + margin.top - 10)
                 .text("Temperature (°C)")
-                .style("font-size", "24px")
+                .style("font-family", "rubik")
+                .style("font-size", "34px")
         });
 
 
