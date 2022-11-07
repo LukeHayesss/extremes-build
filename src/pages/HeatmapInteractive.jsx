@@ -29,19 +29,32 @@ d3.csv(data2).then(function (data) {
  })
 
  const myGroups = Array.from({ length: 31 }, (_, i) => i + 1)
- const myMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+ const myMonths = [
+    "Jan", 
+    "Feb", 
+    "Mar", 
+    "Apr", 
+    "May", 
+    "Jun", 
+    "Jul", 
+    "Aug", 
+    "Sep", 
+    "Oct", 
+    "Nov", 
+    "Dec"
+    ]
 
  // Build X scales and axis:
  const x = d3.scaleBand()
      .range([0, width])
      .domain(myGroups)
      .padding(0.01);
- svg.append("g")
+     svg.append("g")
      .attr("transform", `translate(0, ${height})`)
      .call(d3.axisBottom(x))
      .call(g => g.select(".domain").remove());
 
- svg.append("g")
+     svg.append("g")
      .call(d3.axisTop(x))
      .call(g => g.select(".domain").remove());
 
@@ -50,10 +63,10 @@ d3.csv(data2).then(function (data) {
      .range([0, height])
      .domain(myMonths)
      .padding(0.01);
- svg.append("g")
+     svg.append("g")
      .call(d3.axisLeft(y))
      .call(g => g.select(".domain").remove());
- svg.append("g")
+     svg.append("g")
      .call(d3.axisRight(y))
      .attr("transform", `translate(${width}, 0)`)
      .call(g => g.select(".domain").remove());
@@ -61,37 +74,47 @@ d3.csv(data2).then(function (data) {
  // Build color scale
  const myColor = d3.scaleQuantile()
      .domain([0, 5, 20, 40, 60, 80, 95, 100])
-     .range(["#08306B", "#2171B5", "#6BAED6", "#FFFFFF", "#FCBBA1", "#FA6A4A", "#CB181D"]);
+     .range([
+        "#08306B", 
+        "#2171B5", 
+        "#6BAED6", 
+        "#FFFFFF", 
+        "#FCBBA1", 
+        "#FA6A4A", 
+        "#CB181D"
+    ]);
 
  // create a tooltip
  const tooltip = d3.select(node)
      .append('div')
-     .style("opacity", 0.7)
+     .style("opacity", 0.8)
      .attr("class", "tooltip")
      .style("background-color", "black")
      .style("border", "solid")
      .style("border-width", "2px")
      .style("border-radius", "5px")
      .style("padding", "5px")
+     .style("margin-bottom", '51px')
 
  // Three function that change the tooltip when user hover / move / leave a cell
  const mouseover = function (event, d) {
-     tooltip
+         tooltip
          .style("opacity", 1)
-     d3.select(this)
+         d3.select(this)
          .style("stroke", "black")
          .style("opacity", 1)
  }
  const mousemove = function (event, d) {
-     tooltip
+         tooltip
          .html("The exact value of<br>this cell is: " + d.value)
+        //  console.log(d.value, 'HELLO')
          .style("left", (event.x) / 2 + "px")
          .style("top", (event.y) / 2 + "px")
  }
  const mouseleave = function (event, d) {
-     tooltip
+         tooltip
          .style("opacity", 0)
-     d3.select(this)
+         d3.select(this)
          .style("stroke", "none")
          .style("opacity", 1)
  }

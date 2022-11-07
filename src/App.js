@@ -17,6 +17,7 @@ import FooterBelow from './pages/FooterBelow';
 import Heatmap from './pages/Heatmap';
 import HeatwaveHmap from './pages/HeatwaveHmap';
 import HeatmapInteractive from './pages/HeatmapInteractive';
+import Kernal from './pages/Kernal';
 
 function App() {
   return (
@@ -36,14 +37,17 @@ function App() {
         {/* hide the graphs on default, autoscroll into view when map clicked */}
         <Graphs/>
 
-        <LineHeader>This is a graph.</LineHeader>
-        <Heatmap/>
+        {/* <LineHeader>This is a graph.</LineHeader>
+        <Heatmap/> */}
 
         <LineHeader>This is a heatmap for heatwaves.</LineHeader>
-        <HeatwaveHmap/>        
+        <HeatwaveHmap/>
 
         <LineHeader>This is an interactive heatmap.</LineHeader>
-        <HeatmapInteractive/>        
+        <HeatmapInteractive/>   
+
+        <LineHeader>This is a kernal</LineHeader> 
+        <Kernal/>    
 
         <BottomBar/>
         <Footer/>
@@ -97,6 +101,7 @@ const LineHeader = styled.div`
 font-size: 40px;
 font-weight: bold;
 font-family: 'Rubik', sans-serif;
+margin-top: 50px;
 /* margin-bottom: 100px; */
 `
 

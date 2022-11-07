@@ -6,7 +6,7 @@ import data1 from '../data/hwcs_current_year.csv';
 const node = document.createElement('div');
 
     // set the dimensions and margins of the graph
-    const margin = { top: 80, right: 30, bottom: 30, left: 30 },
+    const margin = { top: 81, right: 30, bottom: 30, left: 30 },
         width = 990 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 
@@ -81,7 +81,9 @@ const node = document.createElement('div');
             .attr("x", width / 2)
             .attr("y", -30)
             .attr("text-anchor", "middle")
-            .text("Heat and cold waves in " + new Date().getFullYear());
+            .text("Heat and Cold Waves In " + new Date().getFullYear())
+            .style("font-size", '24px')
+            .style("font-weight", '700')
 
         // Build color scale
         var colorScale = d3.scaleLinear()
