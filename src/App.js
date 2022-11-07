@@ -3,7 +3,6 @@ import GlobalStyles from './pages/GlobalStyles';
 import { BrowserRouter } from 'react-router-dom'
 import BottomBar from './components/BottomBar';
 import Footer from './pages/Footer';
-// import Logo1 from '../src/media/logo-svg.svg';
 import Logo2 from '../src/media/logo-white2.png';
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
@@ -13,11 +12,10 @@ import MoreInfo from './pages/MoreInfo';
 import Graphs from './pages/Graphs';
 import 'leaflet/dist/leaflet.css'
 import FooterBelow from './pages/FooterBelow';
-// import Line from './pages/Line';
-import Heatmap from './pages/Heatmap';
 import HeatwaveHmap from './pages/HeatwaveHmap';
 import HeatmapInteractive from './pages/HeatmapInteractive';
 import Kernal from './pages/Kernal';
+import LineDate from './pages/LineDate';
 
 function App() {
   return (
@@ -40,14 +38,17 @@ function App() {
         {/* <LineHeader>This is a graph.</LineHeader>
         <Heatmap/> */}
 
-        <LineHeader>This is a heatmap for heatwaves.</LineHeader>
+        <LineHeader>Heatmap for Heatwaves.</LineHeader>
         <HeatwaveHmap/>
 
-        <LineHeader>This is an interactive heatmap.</LineHeader>
+        <LineHeader>Interactive Heatmap.</LineHeader>
         <HeatmapInteractive/>   
 
-        <LineHeader>This is a kernal</LineHeader> 
-        <Kernal/>    
+        <LineHeader>Kernal</LineHeader> 
+        <Kernal/>   
+
+        <LineHeader>Line with Date</LineHeader> 
+        <LineDate/>
 
         <BottomBar/>
         <Footer/>
