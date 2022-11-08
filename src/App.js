@@ -57,7 +57,18 @@ function App() {
         </DetailCont>
 
         <LineHeader>Line with Date</LineHeader> 
-        <LineDate/>
+        <LineCont>
+          <LineDate/>
+          <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+          culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+          
+        </LineCont>
+        
 
         <BottomBar/>
         <Footer/>
@@ -66,6 +77,15 @@ function App() {
     </div>
   );
 }
+
+const LineCont = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+`
+
 
 const DetailCont = styled.div`
 width: 100%;
@@ -80,9 +100,9 @@ font-size: 26px;
 flex: 1 33%;
 width: 33%;
 height: auto;
-margin: 0 10px 0 0;
+margin: 0 60px 0 60px;
 text-align: justify;
-padding-left: 40px;
+/* padding-left: 40px; */
 `
 
 const Wrapper = styled.div`

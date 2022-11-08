@@ -9,9 +9,9 @@ import * as fc from 'd3fc';
 const node = document.createElement('div')
 
 // set the dimensions and margins of the graph
-const margin = { top: 80, right: 30, bottom: 30, left: 60 },
+const margin = { top: 40, right: 30, bottom: 30, left: 60 },
 width = 990 - margin.left - margin.right,
-height = 400 - margin.top - margin.bottom;
+height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -96,7 +96,7 @@ Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
     svg.append("text")
         .attr("class", "plot_title")
         .attr("x", width / 2)
-        .attr("y", -30)
+        .attr("y", -9)
         .attr("text-anchor", "middle")
         .text("Temperature (°C) in " + new Date().getFullYear())
         .style('font-size', '34px')
