@@ -16,8 +16,23 @@ import HeatwaveHmap from './pages/HeatwaveHmap';
 import HeatmapInteractive from './pages/HeatmapInteractive';
 import Kernal from './pages/Kernal';
 import LineDate from './pages/LineDate';
+import DoyScatter from './pages/DoyScatter';
+
+//implement autoscroll function
+// import { useRef } from 'react';
+
 
 function App() {
+  
+//   const aboutSection = useRef(null);
+
+//   const scrollDown = (ref) => {
+//   window.scrollTo({
+//     top: ref.current.offsetTop,
+//     behavior: 'smooth',
+//   });
+// };
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -31,6 +46,8 @@ function App() {
           </NavMenu>
         </Wrapper>
         <MapBody/>
+
+        
         <MoreInfo/>
         {/* hide the graphs on default, autoscroll into view when map clicked */}
         <Graphs/>
@@ -66,9 +83,19 @@ function App() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
-          
         </LineCont>
-        
+
+        <FullContainer>
+        <LineHeader>Doy Scatter Plot</LineHeader>
+        <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+          culpa qui officia deserunt mollit anim id est laborum."</BodyDeetsFull>
+        <DoyScatter/>
+        </FullContainer>
 
         <BottomBar/>
         <Footer/>
@@ -86,6 +113,9 @@ const LineCont = styled.div`
     align-items: flex-start;
 `
 
+const FullContainer = styled.div`
+background-color: #eeeeee;
+`
 
 const DetailCont = styled.div`
 width: 100%;
@@ -102,8 +132,19 @@ width: 33%;
 height: auto;
 margin: 0 60px 0 60px;
 text-align: justify;
-/* padding-left: 40px; */
 `
+
+const BodyDeetsFull = styled.div`
+font-family: 'Rubik', sans-serif;
+font-size: 26px;
+display: flex;
+/* width: 80%; */
+height: auto;
+margin: 30px 90px 30px 90px;
+align-items: center;
+text-align: center;
+`
+
 
 const Wrapper = styled.div`
   background-color: #000000;

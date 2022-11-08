@@ -48,8 +48,11 @@ color: black;
 /* background-color: #f8efe4; */
 /* background-color: #9F9690; */
 background-color: #E8E8E8;
+border-top: 1px solid #E0E0E0;
+border-left: none;
+border-right: none;
 cursor: pointer;
-border: none;
+/* border: none; */
 width: 100%;
 &:hover {
     background-color: #E0E0E0;
