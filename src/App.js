@@ -25,11 +25,14 @@ import { useRef } from 'react';
 
 function App() {
   
-  const ref = useRef(null);
-
+const ref = useRef(null);
 const handleClick = () => {
   ref.current?.scrollIntoView({behaviour: 'smooth'});
 }
+
+// window.addEventListener('resize', function() {
+//   console.log("the window was resized")
+// });
   
   return (
     <div className="App">
@@ -56,7 +59,10 @@ const handleClick = () => {
         <Heatmap/> */}
 
         <LineHeader>Heatmap for Heatwaves.</LineHeader>
-        <HeatwaveHmap/>
+        <HmapCont>
+        <HeatwaveHmap/>  
+        </HmapCont>
+        
 
         <LineHeader>Interactive Heatmap.</LineHeader>
         <HeatmapInteractive/>   
@@ -107,6 +113,12 @@ const handleClick = () => {
   );
 }
 
+//define size after applying mobile-friendly viewport within component
+const HmapCont = styled.div`
+width: 85%;
+margin: auto;
+`
+
 const AutoScrollGraphs = styled.div``
 
 const Button = styled.button`
@@ -121,7 +133,7 @@ flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 @media (max-width: 767px) {
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 `
 const FullContainer = styled.div`

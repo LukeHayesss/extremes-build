@@ -29,12 +29,13 @@ font-size: 45px;
 `
 
 const Container = styled.div`
-height: 20vh;
+height: auto;
 `
 
 const Icon = styled.div`
 color: #f4c430;
 cursor: pointer;
+margin-bottom: 20px;
 &:hover {
     @-webkit-keyframes hvr-hang {
   0% {

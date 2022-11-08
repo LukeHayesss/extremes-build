@@ -6,16 +6,18 @@ import data1 from '../data/hwcs_current_year.csv';
 const node = document.createElement('div');
 
     // set the dimensions and margins of the graph
-    const margin = { top: 81, right: 50, bottom: 30, left: 50 },
-        width = 990 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+    const margin = { top: 81, right: 50, bottom: 30, left: 50 }
+    const width = 990 - margin.left - margin.right
+    const height = 400 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3
         .select(node)
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        //add mobile-friendly attribute
+        .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+        // .attr("width", width + margin.left + margin.right)
+        // .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -83,7 +85,6 @@ const node = document.createElement('div');
             .attr("text-anchor", "middle")
             .text("Heat and Cold Waves In " + new Date().getFullYear())
             .style("font-family", "rubik")
-
             .style("font-size", '34px')
             .style("font-weight", '700')
 
@@ -145,7 +146,9 @@ class HeatwaveHmap extends React.Component {
     render() {
         return (
             <div>
-                <RD3Component data={this.state.d3}/>
+                <RD3Component 
+                data={this.state.d3}
+                />
             </div>
         )
     }
