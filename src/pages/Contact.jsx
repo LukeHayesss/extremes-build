@@ -1,8 +1,48 @@
+import styled from "styled-components";
+
+
 const Contact = () => {
     return (
-        <h1>
-            Contact Section/CTA
-        </h1>
+        <Container>
+            <LeftSection>
+            Placeholder
+            </LeftSection>
+
+            <RightSection>
+            Placeholder    
+            </RightSection>
+            
+        </Container>
     )
 }
 export default Contact;
+
+const Container = styled.div`
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+height: 300px;
+`
+
+const LeftSection = styled.div`
+font-family: 'Rubik', sans-serif;
+font-size: 56px;
+flex: 1 33%;
+width: 33%;
+height: auto;
+/* margin: 0 60px 0 60px; */
+text-align: justify;
+`
+
+const RightSection = styled.div`
+font-family: 'Rubik', sans-serif;
+font-size: 56px;
+flex: 1 33%;
+width: 33%;
+height: auto;
+/* margin: 0 60px 0 60px; */
+text-align: justify;
+/* background-color: #F4C430; */
+`

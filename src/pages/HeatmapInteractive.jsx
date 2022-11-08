@@ -7,6 +7,7 @@ const node = document.createElement('div');
 
  // set the dimensions and margins of the graph
  const margin = { top: 30, right: 50, bottom: 30, left: 50 },
+
  width = 1600 - margin.left - margin.right,
  height = 730 - margin.top - margin.bottom;
 
@@ -16,6 +17,7 @@ const svg = d3
  .append("svg")
  .attr("width", width + margin.left + margin.right)
  .attr("height", height + margin.top + margin.bottom)
+//  .call(responsivefy)
  .append("g")
  .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -132,6 +134,26 @@ d3.csv(data2).then(function (data) {
      .on("mousemove", mousemove)
      .on("mouseleave", mouseleave)
 });
+
+//add responsive feature
+// function responsivefy(svg) {
+//     const container = d3.select(svg.node().parentNode),
+//     width = parseInt(svg.style("width"), 10),
+//     height = parseInt(svg.style("height"), 10),
+//     aspect = width / height;
+
+//     svg.attr("viewbox", `0 0 ${width} ${height}`)
+//     .attr("preserveAspectRatio", "xMinYMid")
+//     .call(resize);
+
+//     d3.select(window).on("resize." + container.attr(node), resize);
+
+//     function resize() {
+//         const targetWidth = parseInt(container.style("width"));
+//         svg.attr("width", targetWidth);
+//         svg.attr("height", Math.round(targetWidth / aspect));
+//     }
+// }
 
 const RD3Component = rd3.Component;
 class HeatmapInteractive extends React.Component {

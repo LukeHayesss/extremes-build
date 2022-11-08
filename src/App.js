@@ -115,13 +115,15 @@ background-color: #f8f5f1;
 `
 
 const LineCont = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+@media (max-width: 767px) {
+  flex-direction: column;
+}
 `
-
 const FullContainer = styled.div`
 background-color: #eeeeee;
 `
@@ -132,7 +134,11 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
+@media (max-width: 767px) {
+  flex-direction: column;
+}
 `
+
 const BodyDeets = styled.div`
 font-family: 'Rubik', sans-serif;
 font-size: 26px;
@@ -141,6 +147,10 @@ width: 33%;
 height: auto;
 margin: 0 60px 0 60px;
 text-align: justify;
+
+@media (max-width: 767px) {
+  width: auto;
+}
 `
 
 const BodyDeetsFull = styled.div`

@@ -81,12 +81,13 @@ const node = document.createElement('div');
             svg.append("text")
                 .attr("y", x(todayTempC) - 5)  //<<== change your code here
                 .attr("x", y(dens_range[1]))  //<<== and here
-                .attr("text-anchor", "end")
-                .attr("transform", "rotate(-90)")
+                // .attr("text-anchor", "end")
+                // .attr("transform", "rotate(-90)")
+                .attr("text-anchor", "start")
+                .attr("transform", "translate(0," + (height - 10) + "),rotate(-90)")
                 .text("Next 24h temperature: " + todayTempC.toFixed(1) + "°C")
                 .style("font-family", "rubik")
                 .style("font-size", "24px")
-                // .style("fill", "pink")
                 .classed('todayColor', true);
 
             svg.append("line")
@@ -113,8 +114,9 @@ const node = document.createElement('div');
             svg.append("text")
                 .attr("y", x(d3.quantile(doyTempC, 0.05)) - 5)  //<<== change your code here
                 .attr("x", y(dens_range[1]))  //<<== and here
-                .attr("text-anchor", "end")
-                .attr("transform", "rotate(-90)")
+                .attr("text-anchor", "start")
+                .attr("transform", "translate(0," + (height - 10) + "),rotate(-90)")
+                // .attr("transform", "rotate(-90)")
                 .text("5th percentile: " + d3.quantile(doyTempC, 0.05).toFixed(1) + "°C")
                 .style("font-family", "rubik")
                 .style("font-size", "24px")
@@ -122,8 +124,10 @@ const node = document.createElement('div');
             svg.append("text")
                 .attr("y", x(d3.quantile(doyTempC, 0.95)) - 5)  //<<== change your code here
                 .attr("x", y(dens_range[1]))  //<<== and here
-                .attr("text-anchor", "end")
-                .attr("transform", "rotate(-90)")
+                // .attr("text-anchor", "end")
+                // .attr("transform", "rotate(-90)")
+                .attr("text-anchor", "start")
+                .attr("transform", "translate(0," + (height - 10) + "),rotate(-90)")
                 .text("95th percentile: " + d3.quantile(doyTempC, 0.95).toFixed(1) + "°C")
                 .style("font-family", "rubik")
                 .style("font-size", "24px")
@@ -131,8 +135,10 @@ const node = document.createElement('div');
             svg.append("text")
                 .attr("y", x(d3.quantile(doyTempC, 0.5)) - 5)  //<<== change your code here
                 .attr("x", y(dens_range[1]))  //<<== and here
-                .attr("text-anchor", "end")
-                .attr("transform", "rotate(-90)")
+                // .attr("text-anchor", "end")
+                // .attr("transform", "rotate(-90)")
+                .attr("text-anchor", "start")
+                .attr("transform", "translate(0," + (height - 10) + "),rotate(-90)")
                 .text("50th percentile: " + d3.quantile(doyTempC, 0.5).toFixed(1) + "°C")
                 .style("font-family", "rubik")
                 .style("font-size", "24px")
