@@ -17,21 +17,19 @@ import HeatmapInteractive from './pages/HeatmapInteractive';
 import Kernal from './pages/Kernal';
 import LineDate from './pages/LineDate';
 import DoyScatter from './pages/DoyScatter';
+import Contact from './pages/Contact';
 
-//implement autoscroll function
-// import { useRef } from 'react';
+// implement autoscroll function
+import { useRef } from 'react';
 
 
 function App() {
   
-//   const aboutSection = useRef(null);
+  const ref = useRef(null);
 
-//   const scrollDown = (ref) => {
-//   window.scrollTo({
-//     top: ref.current.offsetTop,
-//     behavior: 'smooth',
-//   });
-// };
+const handleClick = () => {
+  ref.current?.scrollIntoView({behaviour: 'smooth'});
+}
   
   return (
     <div className="App">
@@ -48,9 +46,11 @@ function App() {
         <MapBody/>
 
         
-        <MoreInfo/>
+        {/* <MoreInfo></MoreInfo> */}
+        <Button onClick={handleClick}><MoreInfo/></Button>
         {/* hide the graphs on default, autoscroll into view when map clicked */}
-        <Graphs/>
+        
+        <AutoScrollGraphs ref={ref}><Graphs/></AutoScrollGraphs>
 
         {/* <LineHeader>This is a graph.</LineHeader>
         <Heatmap/> */}
@@ -97,6 +97,8 @@ function App() {
         <DoyScatter/>
         </FullContainer>
 
+
+        <Contact/>
         <BottomBar/>
         <Footer/>
         <FooterBelow/>
@@ -104,6 +106,13 @@ function App() {
     </div>
   );
 }
+
+const AutoScrollGraphs = styled.div``
+
+const Button = styled.button`
+border: none;
+background-color: #f8f5f1;
+`
 
 const LineCont = styled.div`
     width: 100%;
@@ -144,7 +153,6 @@ margin: 30px 90px 30px 90px;
 align-items: center;
 text-align: center;
 `
-
 
 const Wrapper = styled.div`
   background-color: #000000;

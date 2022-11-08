@@ -8,8 +8,8 @@ const node = document.createElement('div')
 
 // set the dimensions and margins of the graph
 const margin = { top: 80, right: 30, bottom: 60, left: 60 },
-width = 1290 - margin.left - margin.right,
-height = 600 - margin.top - margin.bottom;
+width = 1490 - margin.left - margin.right,
+height = 660 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -39,12 +39,7 @@ Promise.all([d3.csv(data8), d3.csv(data9)])
     var xval = climTemp.map(function (d) { return parseFloat(d.year); });
 
     var lr = linearRegression(yval, xval);
-    // now you have:
-    // lr.slope
-    // lr.intercept
-    // lr.r2
-    console.log(lr);
-
+    console.log(lr, 'LR');
 
     // Add X axis
     const x = d3.scaleLinear()

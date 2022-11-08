@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-border-top: 1px solid #000000;
+/* border-top: 1px solid #000000; */
 `
 
 const Header = styled.h1`
