@@ -7,8 +7,8 @@ import data4 from '../data/fcvars.csv';
 const node = document.createElement('div');
 
     // set the dimensions and margins of the graph
-    const margin = { top: 60, right: 60, bottom: 100, left: 70 },
-        width = 860 - margin.left - margin.right,
+    const margin = { top: 10, right: 60, bottom: 100, left: 70 },
+        width = 1060 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -142,7 +142,8 @@ const node = document.createElement('div');
                 .attr("class", "xaxis_title")
                 .attr("text-anchor", "end")
                 .attr("x", width)
-                .attr("y", height + margin.top - 10)
+                //adjust margin top and style of temp
+                .attr("y", height + margin.top + 50)
                 .text("Temperature (°C)")
                 .style("font-family", "rubik")
                 .style("font-size", "34px")
