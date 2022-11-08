@@ -26,11 +26,13 @@ const svg = d3
 Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
 .then(([yearTemp, yearBounds, nextTemp]) => {
     const dataTemp = yearTemp.map(function (d) {
-        return { date: d3.timeParse("%Y-%m-%d")(d.time), tmax: kelvin2celsius(d.tmax), tmin: kelvin2celsius(d.tmin) }
+        return { date: d3.timeParse("%Y-%m-%d")(d.time), 
+        tmax: kelvin2celsius(d.tmax), tmin: kelvin2celsius(d.tmin) }
     })
     const dataBounds = yearBounds.map(function (d) {
         return {
-            date: d3.timeParse("%Y-%m-%d")(d.doy), tmax: d.tmax, tmin: d.tmin, quantile: d.quantile
+            date: d3.timeParse("%Y-%m-%d")(d.doy), 
+            tmax: d.tmax, tmin: d.tmin, quantile: d.quantile
         }
     })
 
@@ -41,13 +43,15 @@ Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
 
     function getTmaxQuantiles(qb, qt) {
         return {
-            date: qb.map(d => d.date), q01: qb.map(d => kelvin2celsius(d.tmax)), q09: qt.map(d => kelvin2celsius(d.tmax))
+            date: qb.map(d => d.date), q01: qb.map(d => kelvin2celsius(d.tmax)), 
+            q09: qt.map(d => kelvin2celsius(d.tmax))
         }
     }
 
     function getTminQuantiles(qb, qt) {
         return {
-            date: qb.map(d => d.date), q01: qb.map(d => kelvin2celsius(d.tmin)), q09: qt.map(d => kelvin2celsius(d.tmin))
+            date: qb.map(d => d.date), q01: qb.map(d => kelvin2celsius(d.tmin)), 
+            q09: qt.map(d => kelvin2celsius(d.tmin))
         }
     }
 
@@ -63,16 +67,21 @@ Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
         return { date: d, q01: boundsTmin.q01[i], q09: boundsTmin.q09[i] }
     })
 
-    const ymin = Math.min(d3.min(dataTemp, d => d.tmin), d3.min(mixedTmin, d => d.q01), kelvin2celsius(nextTemp[0].tmin)) - 5
-    const ymax = Math.max(d3.max(dataTemp, d => d.tmax), d3.max(mixedTmax, d => d.q09), kelvin2celsius(nextTemp[0].tmax)) + 5
+    const ymin = Math.min(d3.min(dataTemp, d => d.tmin), 
+    d3.min(mixedTmin, d => d.q01), 
+    kelvin2celsius(nextTemp[0].tmin)) - 5
+    const ymax = Math.max(d3.max(dataTemp, d => d.tmax), 
+    d3.max(mixedTmax, d => d.q09), 
+    kelvin2celsius(nextTemp[0].tmax)) + 5
 
     const today = new Date()
     // Add X axis --> it is a date format
     const x = d3.scaleTime()
         .domain(d3.extent(q05, d => d.date))
-        .range([0, width]);
+        .range([0, width])
         
         svg.append("g")
+        
         .attr("transform", "translate(0," + height + ")")
         .call(fc.axisBottom(x).tickFormat(d3.timeFormat("%b")).tickCenterLabel(true))
         .call(g => g.select(".domain").remove());
@@ -89,7 +98,9 @@ Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
         .attr("x", width / 2)
         .attr("y", -30)
         .attr("text-anchor", "middle")
-        .text("Temperature (°C) in " + new Date().getFullYear());
+        .text("Temperature (°C) in " + new Date().getFullYear())
+        .style('font-size', '34px')
+        .style('font-family', 'Rubik');
 
     const opacityDecorate = selection => {
         selection.attr('opacity', 0.2);
