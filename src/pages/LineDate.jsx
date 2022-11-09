@@ -9,7 +9,7 @@ import * as fc from 'd3fc';
 const node = document.createElement('div')
 
 // set the dimensions and margins of the graph
-const margin = { top: 40, right: 30, bottom: 30, left: 60 },
+const margin = { top: 40, right: 30, bottom: 31, left: 60 },
 width = 990 - margin.left - margin.right,
 height = 600 - margin.top - margin.bottom;
 
