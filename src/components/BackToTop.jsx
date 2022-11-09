@@ -1,5 +1,5 @@
 import React, {useState, useEffect }from 'react';
-import { FaAngleUp } from 'react-icons/fa';
+import { FaArrowCircleUp } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const BackToTop = () => {
@@ -27,7 +27,7 @@ const BackToTop = () => {
             {" "}
             {showTopBtn && (
             <Icon>
-            <FaAngleUp size={50} onClick={goToTop}/>
+            <FaArrowCircleUp size={50} onClick={goToTop}/>
             </Icon>    
             )}{" "}
         </TopToBtm>
@@ -45,13 +45,9 @@ const Icon = styled.div`
     bottom: 25px;
     right: 25px;
     z-index: 20;
-    background-color: #F4C430;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    color: #FFFFFF;
+    color: #F4C430;
     cursor: pointer;
     &:hover {
-        color: #000000;
+        color: darkgray;
     };
 `
