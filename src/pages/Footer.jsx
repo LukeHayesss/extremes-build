@@ -120,6 +120,7 @@ const InfoContainer = styled.div`
     font-size: 22px;
     font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
+    font-weight: 600;
   }
   li:hover {
     cursor: pointer;

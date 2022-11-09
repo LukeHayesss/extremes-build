@@ -102,7 +102,8 @@ Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
         .attr("text-anchor", "middle")
         .text("Temperature (°C) in " + new Date().getFullYear())
         .style('font-size', '34px')
-        .style('font-family', 'Rubik');
+        .style('font-family', 'Rubik')
+        .style("font-weight", '600');
 
     const opacityDecorate = selection => {
         selection.attr('opacity', 0.2);

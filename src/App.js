@@ -51,11 +51,6 @@ const handleClick = () => {
         {/* hide the graphs on default, autoscroll into view when map clicked */}
         
         <AutoScrollGraphs ref={ref}><Graphs/></AutoScrollGraphs>
-
-        {/* <LineHeader>Heatmap for Heatwaves.</LineHeader>
-        <HmapCont>
-        <HeatwaveHmap/>  
-        </HmapCont> */}
         
         <ContainerOne>
         <DetailCont>
@@ -158,6 +153,7 @@ margin: auto;
 
 const LineDateCont = styled.div`
 width: 50%;
+padding-left: 35px;
 @media (max-width: 767px) {
   margin: auto;
   width: 90%;
@@ -237,7 +233,7 @@ width: 33%;
 height: auto;
 margin: 0 60px 0 60px;
 text-align: justify;
-
+font-weight: 300;
 @media (max-width: 767px) {
   width: auto;
 }

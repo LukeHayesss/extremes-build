@@ -34,6 +34,7 @@ flex: 1 33%;
 width: 33%;
 height: auto;
 padding-top: 35px;
+font-weight: 600;
 /* margin: 0 60px 0 60px; */
 text-align: justify;
 `
@@ -45,6 +46,7 @@ flex: 1 33%;
 width: 33%;
 height: auto;
 padding-top: 35px;
+font-weight: 600;
 /* margin: 0 60px 0 60px; */
 text-align: justify;
 /* background-color: #F4C430; */

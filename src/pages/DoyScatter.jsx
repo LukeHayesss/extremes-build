@@ -96,6 +96,7 @@ Promise.all([d3.csv(data8), d3.csv(data9)])
         .style("fill", "red")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
 
     const myLine = ([[yearExtent[0], Number(yearExtent[0]) * lr.slope + lr.intercept], 
     [yearExtent[1], Number(yearExtent[1]) * lr.slope + lr.intercept]])
@@ -138,6 +139,7 @@ Promise.all([d3.csv(data8), d3.csv(data9)])
         .attr("text-anchor", "start")
         .style("font-family", "rubik")
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .text("10th percentile: " + q10.toFixed(1) + "°C")
 
     svg.append("text")
@@ -146,6 +148,7 @@ Promise.all([d3.csv(data8), d3.csv(data9)])
         .attr("text-anchor", "start")
         .style("font-family", "rubik")
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .text("90th percentile: " + q90.toFixed(1) + "°C")
 
     svg.append("text")
@@ -154,6 +157,7 @@ Promise.all([d3.csv(data8), d3.csv(data9)])
         .attr("text-anchor", "start")
         .style("font-family", "rubik")
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .text("Trend: " + (lr.slope * 10).toFixed(1) + "°C/decade")
 
 }

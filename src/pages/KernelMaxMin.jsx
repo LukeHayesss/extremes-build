@@ -113,6 +113,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("Next 24h: " + todayTempC[0].tmax.toFixed(1) + "°C")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .classed('todayColorX', true);
 
     svg.append("line")
@@ -130,6 +131,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .attr("transform", "rotate(-90)")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .text("Next 24h: " + todayTempC[0].tmin.toFixed(1) + "°C")
         .classed('todayColorN', true);
 
@@ -156,6 +158,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("5th perc: " + d3.quantile(doyTX, 0.05).toFixed(1) + "°C")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .classed('ptileTextX', true)
 
     svg.append("text")
@@ -166,6 +169,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("95th perc: " + d3.quantile(doyTX, 0.95).toFixed(1) + "°C")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .classed('ptileTextX', true);
 
     svg.append("line")
@@ -190,6 +194,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("5th perc: " + d3.quantile(doyTN, 0.05).toFixed(1) + "°C")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .classed('ptileTextN', true);
 
     svg.append("text")
@@ -200,6 +205,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("95th perc: " + d3.quantile(doyTN, 0.95).toFixed(1) + "°C")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
+        .style("font-weight", '600')
         .classed('ptileTextN', true);
 
     svg.append("text")
@@ -207,9 +213,10 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .attr("text-anchor", "end")
         .attr("x", width)
         //adjust margin top and style of temperature heading
-        .attr("y", height + margin.top + 51)
+        .attr("y", height + margin.top + 60)
         .style("font-family", 'rubik')
         .style("font-size", '34px')
+        .style("font-weight", '600')
         .text("Temperature (°C)");
 });
 
