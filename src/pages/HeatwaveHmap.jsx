@@ -6,7 +6,7 @@ import data1 from '../data/hwcs_current_year.csv';
 const node = document.createElement('div');
 
     // set the dimensions and margins of the graph
-    const margin = { top: 80, right: 50, bottom: 30, left: 50 }
+    const margin = { top: 79, right: 50, bottom: 30, left: 50 }
     const width = 990 - margin.left - margin.right
     const height = 400 - margin.top - margin.bottom;
 

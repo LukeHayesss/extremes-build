@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import React from 'react';
 import data3 from '../data/maxmin_temp_doy.csv';
 import data4 from '../data/maxmin_fcvars.csv';
-
+import '../d3Styles/kernelmaxmin.css'
 
 const node = document.createElement('div');
 
@@ -62,20 +62,17 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
     // add the x Axis
     const x = d3.scaleLinear()
         .domain(temp_range)
-        .range([0, width]);
+        .range([0, width])
     svg.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x))
         .select(".domain")
         .remove();
 
-
-
     // add the y Axis
     const y = d3.scaleLinear()
         .range([height, 0])
         .domain(dens_range);
-
 
     // Plot the PDF max and min
     svg.append("path")
@@ -101,7 +98,6 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         );
 
     //Append lines for today's temperatures
-
     svg.append("line")
         .attr("class", "nextTempX")
         .attr("x1", x(todayTempC[0].tmax))
@@ -144,12 +140,14 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .attr("y1", y(dens_range[0]))
         .attr("x2", x(d3.quantile(doyTX, 0.05)))  //<<== and here
         .attr("y2", y(dens_range[1]))
+
     svg.append("line")
         .attr("class", "ptileTempX")
         .attr("x1", x(d3.quantile(doyTX, 0.95)))  //<<== change your code here
         .attr("y1", y(dens_range[0]))
         .attr("x2", x(d3.quantile(doyTX, 0.95)))  //<<== and here
         .attr("y2", y(dens_range[1]))
+
     svg.append("text")
         .attr("y", x(d3.quantile(doyTX, 0.05)) - 5)  //<<== change your code here
         .attr("x", y(dens_range[1]))  //<<== and here
@@ -158,7 +156,8 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("5th perc: " + d3.quantile(doyTX, 0.05).toFixed(1) + "°C")
         .style("font-family", 'rubik')
         .style("font-size", '24px')
-        .classed('ptileTextX', true);
+        .classed('ptileTextX', true)
+
     svg.append("text")
         .attr("y", x(d3.quantile(doyTX, 0.95)) - 5)  //<<== change your code here
         .attr("x", y(dens_range[1]))  //<<== and here
@@ -175,12 +174,14 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .attr("y1", y(dens_range[0]))
         .attr("x2", x(d3.quantile(doyTN, 0.05)))  //<<== and here
         .attr("y2", y(dens_range[1]))
+
     svg.append("line")
         .attr("class", "ptileTempN")
         .attr("x1", x(d3.quantile(doyTN, 0.95)))  //<<== change your code here
         .attr("y1", y(dens_range[0]))
         .attr("x2", x(d3.quantile(doyTN, 0.95)))  //<<== and here
         .attr("y2", y(dens_range[1]))
+
     svg.append("text")
         .attr("y", x(d3.quantile(doyTN, 0.05)) - 5)  //<<== change your code here
         .attr("x", y(dens_range[1]))  //<<== and here
@@ -190,6 +191,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .style("font-family", 'rubik')
         .style("font-size", '24px')
         .classed('ptileTextN', true);
+
     svg.append("text")
         .attr("y", x(d3.quantile(doyTN, 0.95)) - 5)  //<<== change your code here
         .attr("x", y(dens_range[1]))  //<<== and here
@@ -199,6 +201,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .style("font-family", 'rubik')
         .style("font-size", '24px')
         .classed('ptileTextN', true);
+
     svg.append("text")
         .attr("class", "xaxis_title")
         .attr("text-anchor", "end")
@@ -208,7 +211,6 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .style("font-family", 'rubik')
         .style("font-size", '34px')
         .text("Temperature (°C)");
-
 });
 
 
@@ -231,6 +233,7 @@ function kelvin2celsius(k) {
 return k - 273.15;
 }
 
+
 const RD3Component = rd3.Component;
 class KernelMaxMin extends React.Component {
     constructor(props) {
@@ -249,3 +252,5 @@ class KernelMaxMin extends React.Component {
     }
 }
 export default KernelMaxMin;
+
+

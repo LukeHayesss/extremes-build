@@ -178,7 +178,7 @@ const DoyCont = styled.div`
 width: 60%;
 @media (max-width: 767px) {
   margin: auto;
-  width: 100%;
+  width: 90%;
   padding-top: 35px;
 }
 `

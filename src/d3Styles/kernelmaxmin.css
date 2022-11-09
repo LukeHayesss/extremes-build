@@ -1,0 +1,10 @@
+/* target the text attributes for d3 */
+/* text {
+    font-size: 30px;
+} */
+
+svg .tick > text {
+    font-size: 2rem;
+    font-family: 'Questrial', sans-serif;
+    font-variant-numeric: tabular-nums;
+}

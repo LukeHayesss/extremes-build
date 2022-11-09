@@ -26,9 +26,6 @@ h1 {
     font-size: 30px;
 }
 
-/* text {
-    font-size: 20px;
-} */
 
 main {
     padding: 10px;
@@ -57,6 +54,7 @@ p {
     /* text-decoration: underline; */
   }
 }
+
 `
 
 export default GlobalStyles;
