@@ -14,13 +14,14 @@ import 'leaflet/dist/leaflet.css'
 import FooterBelow from './pages/FooterBelow';
 import HeatwaveHmap from './pages/HeatwaveHmap';
 import HeatmapInteractive from './pages/HeatmapInteractive';
-import Kernal from './pages/Kernal';
+// import Kernal from './pages/Kernal';
 import LineDate from './pages/LineDate';
 import DoyScatter from './pages/DoyScatter';
 import Contact from './pages/Contact';
 
 // implement autoscroll function
 import { useRef } from 'react';
+import KernalMaxMin from './pages/KernalMaxMin';
 
 
 function App() {
@@ -76,7 +77,8 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
-        <Kernal/>   
+        {/* <Kernal/>    */}
+        <KernalMaxMin/>
         </DetailCont>
 
         <LineHeader>Line with Date</LineHeader> 
@@ -113,7 +115,7 @@ const handleClick = () => {
   );
 }
 
-//define size after applying mobile-friendly viewport within component
+//define size after applying mobile-friendly viewbox within component
 const HmapCont = styled.div`
 width: 85%;
 margin: auto;
