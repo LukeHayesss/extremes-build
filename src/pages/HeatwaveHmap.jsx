@@ -6,7 +6,7 @@ import data1 from '../data/hwcs_current_year.csv';
 const node = document.createElement('div');
 
     // set the dimensions and margins of the graph
-    const margin = { top: 79, right: 60, bottom: 30, left: 60 }
+    const margin = { top: 90, right: 60, bottom: 30, left: 60 }
     const width = 1400 - margin.left - margin.right
     const height = 630 - margin.top - margin.bottom;
 
@@ -81,7 +81,7 @@ const node = document.createElement('div');
         svg.append("text")
             .attr("class", "plot_title")
             .attr("x", width / 2)
-            .attr("y", -30)
+            .attr("y", -60)
             .attr("text-anchor", "middle")
             .text("Heat and Cold Waves In " + new Date().getFullYear())
             .style("font-family", "rubik")

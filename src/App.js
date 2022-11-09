@@ -210,7 +210,7 @@ padding-bottom: 35px;
 const FullContainerLight = styled.div`
 background-color: #f8f5f1;
 margin-top: -50px;
-padding-bottom: 35px;
+padding-bottom: 55px;
 `
 
 const DetailCont = styled.div`
