@@ -7,7 +7,7 @@ import data9 from '../data/scatter_fcvars.csv';
 const node = document.createElement('div')
 
 // set the dimensions and margins of the graph
-const margin = { top: 80, right: 30, bottom: 60, left: 60 },
+const margin = { top: 81, right: 30, bottom: 60, left: 60 },
 width = 1490 - margin.left - margin.right,
 height = 660 - margin.top - margin.bottom;
 

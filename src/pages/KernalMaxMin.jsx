@@ -202,7 +202,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .attr("text-anchor", "end")
         .attr("x", width)
         //adjust margin top and style of temperature heading
-        .attr("y", height + margin.top + 50)
+        .attr("y", height + margin.top + 51)
         .style("font-family", 'rubik')
         .style("font-size", '34px')
         .text("Temperature (°C)");

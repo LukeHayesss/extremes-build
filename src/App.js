@@ -14,15 +14,14 @@ import 'leaflet/dist/leaflet.css'
 import FooterBelow from './pages/FooterBelow';
 import HeatwaveHmap from './pages/HeatwaveHmap';
 import HeatmapInteractive from './pages/HeatmapInteractive';
-// import Kernal from './pages/Kernal';
 import LineDate from './pages/LineDate';
 import DoyScatter from './pages/DoyScatter';
 import Contact from './pages/Contact';
+import KernalMaxMin from './pages/KernalMaxMin';
+import BackToTop from './components/BackToTop';
 
 // implement autoscroll function
 import { useRef } from 'react';
-import KernalMaxMin from './pages/KernalMaxMin';
-
 
 function App() {
   
@@ -30,15 +29,12 @@ const ref = useRef(null);
 const handleClick = () => {
   ref.current?.scrollIntoView({behaviour: 'smooth'});
 }
-
-// window.addEventListener('resize', function() {
-//   console.log("the window was resized")
-// });
   
   return (
     <div className="App">
       <BrowserRouter>
       <ScrollToTop/>
+      <BackToTop/>
       <GlobalStyles/>
       <Wrapper>
           <NavMenu>
@@ -55,9 +51,6 @@ const handleClick = () => {
         {/* hide the graphs on default, autoscroll into view when map clicked */}
         
         <AutoScrollGraphs ref={ref}><Graphs/></AutoScrollGraphs>
-
-        {/* <LineHeader>This is a graph.</LineHeader>
-        <Heatmap/> */}
 
         <LineHeader>Heatmap for Heatwaves.</LineHeader>
         <HmapCont>
@@ -77,7 +70,6 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
-        {/* <Kernal/>    */}
         <KernalMaxMin/>
         </DetailCont>
 

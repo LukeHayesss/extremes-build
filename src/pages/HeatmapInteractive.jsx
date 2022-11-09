@@ -109,7 +109,6 @@ d3.csv(data2).then(function (data) {
  const mousemove = function (event, d) {
          tooltip
          .html("The exact value of<br>this cell is: " + d.value)
-        //  console.log(d.value, 'HELLO')
          .style("left", (event.x) / 2 + "px")
          .style("top", (event.y) / 2 + "px")
  }
