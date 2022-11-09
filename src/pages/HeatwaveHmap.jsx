@@ -6,9 +6,9 @@ import data1 from '../data/hwcs_current_year.csv';
 const node = document.createElement('div');
 
     // set the dimensions and margins of the graph
-    const margin = { top: 79, right: 50, bottom: 30, left: 50 }
-    const width = 990 - margin.left - margin.right
-    const height = 400 - margin.top - margin.bottom;
+    const margin = { top: 79, right: 60, bottom: 30, left: 60 }
+    const width = 1400 - margin.left - margin.right
+    const height = 630 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3
@@ -67,7 +67,7 @@ const node = document.createElement('div');
         const y = d3.scaleBand()
             .range([0, height])
             .domain(myMonths)
-            .padding(0.01);
+            .padding(0.01)
         svg.append("g")
             .call(d3.axisLeft(y))
             .select(".domain")
@@ -125,6 +125,7 @@ const node = document.createElement('div');
             .attr("x", (d) => x(d.day))
             .attr("y", (d) => y(myMonths[d.month]))
             .attr("dy", ".35em")
+            
             .text((d) => d.EHF > 0 ? parseInt(d.EHF) : "");
         bar
             .append("text")

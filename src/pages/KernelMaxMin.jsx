@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import React from 'react';
 import data3 from '../data/maxmin_temp_doy.csv';
 import data4 from '../data/maxmin_fcvars.csv';
-import '../d3Styles/kernelmaxmin.css'
+import '../d3Styles/d3.css'
 
 const node = document.createElement('div');
 
