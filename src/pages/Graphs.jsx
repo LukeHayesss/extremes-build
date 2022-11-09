@@ -10,8 +10,8 @@ const Graphs = () => {
     return (
         <Wrapper>
             <Container>
-                <Header>Graphs and Plots</Header>
-                <Para>Hidden by default, visible once map clicked</Para>
+                <Header>Further Info</Header>
+                {/* <Para>Hidden by default, visible once map clicked</Para> */}
             </Container>
             
         </Wrapper>
@@ -24,17 +24,20 @@ display: flex;
 justify-content: center;
 align-items: center;
 border-top: 1px solid #000000;
+background-color: #EEEEEE;
+
 `
 
 const Header = styled.h1`
 font-family: 'Rubik', sans-serif;
-font-size: 45px;
+font-size: 55px;
+padding-top: 30px;
 `
-const Para = styled.div`
-font-family: Arial, Helvetica, sans-serif;
-font-size: 35px;
-`
+// const Para = styled.div`
+// font-family: Arial, Helvetica, sans-serif;
+// font-size: 35px;
+// `
 
 const Container = styled.div`
-height: 20vh;
+/* height: 20vh; */
 `

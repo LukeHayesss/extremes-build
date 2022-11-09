@@ -17,7 +17,7 @@ import HeatmapInteractive from './pages/HeatmapInteractive';
 import LineDate from './pages/LineDate';
 import DoyScatter from './pages/DoyScatter';
 import Contact from './pages/Contact';
-import KernalMaxMin from './pages/KernalMaxMin';
+import KernelMaxMin from './pages/KernelMaxMin';
 import BackToTop from './components/BackToTop';
 
 // implement autoscroll function
@@ -52,16 +52,12 @@ const handleClick = () => {
         
         <AutoScrollGraphs ref={ref}><Graphs/></AutoScrollGraphs>
 
-        <LineHeader>Heatmap for Heatwaves.</LineHeader>
+        {/* <LineHeader>Heatmap for Heatwaves.</LineHeader>
         <HmapCont>
         <HeatwaveHmap/>  
-        </HmapCont>
+        </HmapCont> */}
         
-
-        <LineHeader>Interactive Heatmap.</LineHeader>
-        <HeatmapInteractive/>   
-
-        <LineHeader>Kernal</LineHeader> 
+        <ContainerOne>
         <DetailCont>
         <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -70,8 +66,22 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
-        <KernalMaxMin/>
+        <KernelMaxMin/>
         </DetailCont>
+        
+
+        {/* <LineHeader>Doy Scatter Plot</LineHeader> */}
+        <DetailCont>
+        <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+          culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+        <DoyScatter/>
+        </DetailCont>
+        </ContainerOne>
 
         <LineHeader>Line with Date</LineHeader> 
         <LineCont>
@@ -86,7 +96,7 @@ const handleClick = () => {
         </LineCont>
 
         <FullContainer>
-        <LineHeader>Doy Scatter Plot</LineHeader>
+        <LineHeader>Interactive Heatmap</LineHeader>
         <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -94,8 +104,22 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeetsFull>
-        <DoyScatter/>
+        <HeatmapInteractive/>
         </FullContainer>
+
+        <FullContainerLight>
+        <LineHeader>Heat and Cold Waves In 2022.</LineHeader>
+        <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+          culpa qui officia deserunt mollit anim id est laborum."</BodyDeetsFull>
+        <HmapCont>
+        <HeatwaveHmap/>  
+        </HmapCont>
+        </FullContainerLight>
 
 
         <Contact/>
@@ -109,11 +133,16 @@ const handleClick = () => {
 
 //define size after applying mobile-friendly viewbox within component
 const HmapCont = styled.div`
-width: 85%;
+width: 75%;
 margin: auto;
 `
 
 const AutoScrollGraphs = styled.div``
+
+const ContainerOne = styled.div`
+background-color: #EEEEEE;
+padding-bottom: 35px;
+`
 
 const Button = styled.button`
 border: none;
@@ -126,12 +155,20 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
+padding-bottom: 35px;
 @media (max-width: 767px) {
   flex-direction: column-reverse;
 }
 `
 const FullContainer = styled.div`
-background-color: #eeeeee;
+background-color: #EEEEEE;
+padding-bottom: 35px;
+`
+
+const FullContainerLight = styled.div`
+background-color: #f8f5f1;
+margin-top: -50px;
+padding-bottom: 35px;
 `
 
 const DetailCont = styled.div`
@@ -140,6 +177,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
+padding-top: 30px;
 @media (max-width: 767px) {
   flex-direction: column;
 }
@@ -165,7 +203,7 @@ font-size: 26px;
 display: flex;
 /* width: 80%; */
 height: auto;
-margin: 30px 90px 30px 90px;
+margin: 0px 90px 30px 90px;
 align-items: center;
 text-align: center;
 `
@@ -211,12 +249,15 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const LineHeader = styled.div`
-font-size: 50px;
+font-size: 55px;
 font-weight: bold;
 font-family: 'Rubik', sans-serif;
-margin-top: 50px;
-margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 0px;
+padding-top: 30px;
+padding-bottom: 30px;
 /* margin-bottom: 100px; */
 `
+
 
 export default App;

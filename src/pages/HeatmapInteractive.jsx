@@ -8,8 +8,8 @@ const node = document.createElement('div');
  // set the dimensions and margins of the graph
  const margin = { top: 30, right: 50, bottom: 30, left: 50 },
 
- width = 1600 - margin.left - margin.right,
- height = 730 - margin.top - margin.bottom;
+ width = 1400 - margin.left - margin.right,
+ height = 630 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3

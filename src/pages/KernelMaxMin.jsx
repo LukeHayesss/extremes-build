@@ -230,7 +230,7 @@ return k - 273.15;
 }
 
 const RD3Component = rd3.Component;
-class KernalMaxMin extends React.Component {
+class KernelMaxMin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {d3: ''}
@@ -246,4 +246,4 @@ class KernalMaxMin extends React.Component {
         )
     }
 }
-export default KernalMaxMin;
+export default KernelMaxMin;

@@ -24,6 +24,7 @@ flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 height: 300px;
+background-color: #EEEEEE;
 `
 
 const LeftSection = styled.div`
@@ -32,6 +33,7 @@ font-size: 56px;
 flex: 1 33%;
 width: 33%;
 height: auto;
+padding-top: 35px;
 /* margin: 0 60px 0 60px; */
 text-align: justify;
 `
@@ -42,6 +44,7 @@ font-size: 56px;
 flex: 1 33%;
 width: 33%;
 height: auto;
+padding-top: 35px;
 /* margin: 0 60px 0 60px; */
 text-align: justify;
 /* background-color: #F4C430; */
