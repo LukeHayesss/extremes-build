@@ -66,7 +66,9 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+          <KernelCont>
         <KernelMaxMin/>
+        </KernelCont>
         </DetailCont>
         
 
@@ -79,13 +81,17 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+          <DoyCont>
         <DoyScatter/>
+        </DoyCont>
         </DetailCont>
         </ContainerOne>
 
         <LineHeader>Line with Date</LineHeader> 
         <LineCont>
+          <LineDateCont>
           <LineDate/>
+          </LineDateCont>
           <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -104,7 +110,9 @@ const handleClick = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeetsFull>
+          <HmapInteractiveCont>
         <HeatmapInteractive/>
+        </HmapInteractiveCont>
         </FullContainer>
 
         <FullContainerLight>
@@ -133,8 +141,46 @@ const handleClick = () => {
 
 //define size after applying mobile-friendly viewbox within component
 const HmapCont = styled.div`
-width: 75%;
+width: 80%;
 margin: auto;
+@media (max-width: 767px) {
+  width: 90%;
+}
+`
+
+const HmapInteractiveCont = styled.div`
+width: 80%;
+margin: auto;
+@media (max-width: 767px) {
+  width: 90%;
+}
+`
+
+const LineDateCont = styled.div`
+width: 50%;
+@media (max-width: 767px) {
+  margin: auto;
+  width: 90%;
+  padding-bottom: 35px;
+}
+`
+
+const KernelCont = styled.div`
+width: 60%;
+@media (max-width: 767px) {
+  margin: auto;
+  width: 100%;
+  padding-top: 35px;
+}
+`
+
+const DoyCont = styled.div`
+width: 60%;
+@media (max-width: 767px) {
+  margin: auto;
+  width: 100%;
+  padding-top: 35px;
+}
 `
 
 const AutoScrollGraphs = styled.div``
@@ -157,7 +203,7 @@ justify-content: space-between;
 align-items: flex-start;
 padding-bottom: 35px;
 @media (max-width: 767px) {
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 `
 const FullContainer = styled.div`

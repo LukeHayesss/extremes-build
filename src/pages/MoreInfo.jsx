@@ -26,6 +26,7 @@ align-items: center;
 const Header = styled.h1`
 font-family: 'Rubik', sans-serif;
 font-size: 45px;
+padding-top: 20px;
 `
 
 const Container = styled.div`

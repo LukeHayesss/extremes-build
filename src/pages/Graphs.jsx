@@ -10,7 +10,7 @@ const Graphs = () => {
     return (
         <Wrapper>
             <Container>
-                <Header>Further Info</Header>
+                <Header>Details</Header>
                 {/* <Para>Hidden by default, visible once map clicked</Para> */}
             </Container>
             
