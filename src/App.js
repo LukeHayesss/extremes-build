@@ -245,11 +245,15 @@ const BodyDeetsFull = styled.div`
 font-family: 'Rubik', sans-serif;
 font-size: 26px;
 display: flex;
-/* width: 80%; */
 height: auto;
 margin: 0px 90px 30px 90px;
 align-items: center;
 text-align: center;
+@media (max-width: 896px) {
+  width: auto;
+  margin: 0 25px 0 25px;
+  text-align: justify;
+}
 `
 
 const Wrapper = styled.div`
