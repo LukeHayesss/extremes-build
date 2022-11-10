@@ -153,7 +153,7 @@ margin: auto;
 
 const LineDateCont = styled.div`
 width: 50%;
-padding-left: 35px;
+padding-left: 70px;
 @media (max-width: 767px) {
   margin: auto;
   width: 90%;
@@ -231,7 +231,7 @@ font-size: 26px;
 flex: 1 33%;
 width: 33%;
 height: auto;
-margin: 0 60px 0 60px;
+margin: 0 70px 0 70px;
 text-align: justify;
 font-weight: 300;
 @media (max-width: 767px) {

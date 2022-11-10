@@ -42,8 +42,8 @@ const TopToBtm = styled.div`
 
 const Icon = styled.div`
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 15px;
+    right: 15px;
     z-index: 20;
     color: #F4C430;
     cursor: pointer;

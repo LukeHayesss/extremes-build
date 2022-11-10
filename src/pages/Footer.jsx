@@ -28,13 +28,11 @@ const Footer = () => {
                 <FaTwitter size={30}/>
                 </a>
              </IconLink>
-
              <IconLink target="_blank">
                 <a href="https://www.facebook.com/CurrentlyHQ">
                 <FaFacebook size={30}/>
                 </a>
              </IconLink>
-
               <IconLink target="_blank">
                 <a href="https://www.linkedin.com/company/currentlyhq/">
                 <FaLinkedin size={30}/>
@@ -62,7 +60,7 @@ const Footer = () => {
             <SubscribeButton>Submit</SubscribeButton>
           </SubscribeForm>
           <SubscribeMiniText>
-            By clicking 'submit', you're agreeing to receive our newsletter.
+            By clicking 'submit', you're agreeing to receive our <br></br>newsletter.
           </SubscribeMiniText>
         </SubscribeContainer>
         <FooterPin />
@@ -78,7 +76,7 @@ const HomeNavLink = styled(NavLink)`
 
 const Logo = styled.img`
   height: 70px;
-  margin-left: -50px;
+  /* margin-left: -50px; */
 `;
 
 
@@ -87,7 +85,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 3rem 5.5rem 3rem 5.5rem;
   background-color: #4E545C;
   min-height: calc(35vh - 34px);
 `;

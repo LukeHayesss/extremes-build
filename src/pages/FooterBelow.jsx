@@ -34,7 +34,7 @@ const Copyright = styled.div`
     color: white;
     font-size: 22px;
     text-align: justify;
-    padding-left: 1.2rem;
+    padding-left: 50px;
     margin: auto;
 `
 const Email = styled.div`
@@ -44,7 +44,7 @@ a {
     color: white;
     font-size: 22px;
     text-align: right;
-    padding-right: 1.2rem;
+    padding-right: 55px;
     font-weight: bold;
     &:hover {
         cursor: pointer;

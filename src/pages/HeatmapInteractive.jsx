@@ -6,7 +6,7 @@ import data2 from '../data/hmap_current_year.csv';
 const node = document.createElement('div');
 
  // set the dimensions and margins of the graph
- const margin = { top: 30, right: 60, bottom: 30, left: 60 },
+ const margin = { top: 30, right: 60, bottom: 29, left: 60 },
 
  width = 1400 - margin.left - margin.right,
  height = 630 - margin.top - margin.bottom;
