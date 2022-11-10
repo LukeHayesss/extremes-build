@@ -28,6 +28,11 @@ font-family: 'Rubik', sans-serif;
 font-size: 45px;
 padding-top: 20px;
 color: black;
+@media (max-width: 896px) {
+  width: auto;
+  margin: 0 25px 0 25px;
+  font-size: 38px;
+}
 `
 
 const Container = styled.div`
@@ -38,6 +43,9 @@ const Icon = styled.div`
 color: #f4c430;
 cursor: pointer;
 margin-bottom: 20px;
+@media (max-width: 896px) {
+  
+}
 &:hover {
     @-webkit-keyframes hvr-hang {
   0% {

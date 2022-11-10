@@ -32,6 +32,11 @@ const Header = styled.h1`
 font-family: 'Rubik', sans-serif;
 font-size: 55px;
 padding-top: 30px;
+@media (max-width: 896px) {
+  width: auto;
+  margin: 0 25px 0 25px;
+  font-size: 38px;
+}
 `
 // const Para = styled.div`
 // font-family: Arial, Helvetica, sans-serif;

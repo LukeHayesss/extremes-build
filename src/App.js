@@ -140,6 +140,7 @@ width: 80%;
 margin: auto;
 @media (max-width: 767px) {
   width: 90%;
+  padding-top: 35px;
 }
 `
 
@@ -148,6 +149,7 @@ width: 80%;
 margin: auto;
 @media (max-width: 767px) {
   width: 90%;
+  padding-top: 35px;
 }
 `
 
@@ -158,6 +160,7 @@ padding-left: 70px;
   margin: auto;
   width: 90%;
   padding-bottom: 35px;
+  padding-left: 0px;
 }
 `
 
@@ -272,6 +275,9 @@ const HomeNavLink = styled(NavLink)`
 
 const Logo = styled.img`
   height: 120px;
+  @media (max-width: 896px) {
+  scale: 70%;
+}
 `;
 
 const NavMenu = styled.div`
@@ -304,7 +310,11 @@ margin-top: 20px;
 margin-bottom: 0px;
 padding-top: 30px;
 padding-bottom: 30px;
-/* margin-bottom: 100px; */
+@media (max-width: 896px) {
+  width: auto;
+  margin: 0 25px 0 25px;
+  font-size: 38px;
+}
 `
 
 

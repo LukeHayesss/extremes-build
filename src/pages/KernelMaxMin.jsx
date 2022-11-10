@@ -8,7 +8,7 @@ import '../d3Styles/d3.css'
 const node = document.createElement('div');
 
 // set the dimensions and margins of the graph
-const margin = { top: 10, right: 60, bottom: 100, left: 70 },
+const margin = { top: 10, right: 60, bottom: 99, left: 70 },
 width = 1060 - margin.left - margin.right,
 height = 600 - margin.top - margin.bottom;
 
