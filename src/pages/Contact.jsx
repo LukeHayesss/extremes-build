@@ -25,6 +25,9 @@ justify-content: space-between;
 align-items: flex-start;
 height: 300px;
 background-color: #EEEEEE;
+@media (max-width: 896px) {
+  flex-direction: column;
+}
 `
 
 const LeftSection = styled.div`
@@ -35,8 +38,12 @@ width: 33%;
 height: auto;
 padding-top: 35px;
 font-weight: 600;
-/* margin: 0 60px 0 60px; */
 text-align: justify;
+@media (max-width: 896px) {
+    font-size: 38px;
+    margin: auto;
+    width: auto;
+}
 `
 
 const RightSection = styled.div`
@@ -47,7 +54,10 @@ width: 33%;
 height: auto;
 padding-top: 35px;
 font-weight: 600;
-/* margin: 0 60px 0 60px; */
 text-align: justify;
-/* background-color: #F4C430; */
+@media (max-width: 896px) {
+    font-size: 38px;
+    margin: auto;
+    width: auto;
+}
 `

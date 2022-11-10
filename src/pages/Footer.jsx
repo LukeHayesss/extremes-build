@@ -88,6 +88,10 @@ const Wrapper = styled.div`
   padding: 3rem 5.5rem 3rem 5.5rem;
   background-color: #4E545C;
   min-height: calc(35vh - 34px);
+
+  @media (max-width: 896px) {
+    flex-direction: column;
+  }
 `;
 
 const FooterPin = styled.div`
@@ -111,7 +115,11 @@ const InfoContainer = styled.div`
   list-style: none;
   line-height: 1.5;
   text-align: center;
-  /* margin-left: 3.7rem; */
+
+  @media (max-width: 896px) {
+    display: none;
+  }
+
   li {
     padding: 2px;
     color: #ffffff;
@@ -144,6 +152,10 @@ const Icons = styled.div`
   justify-content: space-between;
   margin-top: 10px;
   width: 120px;
+  @media (max-width: 896px) {
+
+  }
+  
 a {
   color: white;
   &:hover {
@@ -166,6 +178,9 @@ const IconLink = styled.div`
 const SubscribeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 896px) {
+   padding-top: 45px;
+  }
 `
 
 const SubscribeTitle = styled.span`
