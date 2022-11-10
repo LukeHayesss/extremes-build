@@ -235,7 +235,7 @@ height: auto;
 margin: 0 70px 0 70px;
 text-align: justify;
 font-weight: 300;
-@media (max-width: 767px) {
+@media (max-width: 896px) {
   width: auto;
   margin: 0 25px 0 25px;
 }
