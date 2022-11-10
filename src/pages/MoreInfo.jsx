@@ -27,6 +27,7 @@ const Header = styled.h1`
 font-family: 'Rubik', sans-serif;
 font-size: 45px;
 padding-top: 20px;
+color: black;
 `
 
 const Container = styled.div`
