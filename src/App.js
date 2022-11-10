@@ -188,6 +188,7 @@ padding-bottom: 35px;
 
 const Button = styled.button`
 border: none;
+color: black;
 background-color: #f8f5f1;
 `
 
