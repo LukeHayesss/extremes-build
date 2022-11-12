@@ -279,10 +279,12 @@ const HomeNavLink = styled(NavLink)`
 
 const Logo = styled.img`
   height: 120px;
-  @media (max-width: 896px) {
-  /* scale: 70%; */
-  height: 80px;
+@media (max-width: 896px) {
+height: 80px;
 }
+@media (min-width: 768px) {
+height: 90px;
+  }
 `;
 
 const NavMenu = styled.div`

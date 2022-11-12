@@ -215,6 +215,9 @@ const SubscribeTitle = styled.span`
 const SubscribeForm = styled.form`
   align-items: center;
   display: flex;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
 `
 
 const SubscribeInput = styled.input`
