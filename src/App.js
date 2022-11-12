@@ -324,7 +324,7 @@ padding-bottom: 30px;
 }
 `
 const MiniBorder = styled.div`
-border-top: 1px solid #000000;
+border-top: 1px solid #696969;
 `
 
 
