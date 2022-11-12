@@ -49,6 +49,7 @@ background-color: #1a1a1a;
 border-top: 1px solid #000000;
 border-left: none;
 border-right: none;
+border-bottom: 1px solid #696969;
 cursor: pointer;
 /* border: none; */
 width: 100%;
