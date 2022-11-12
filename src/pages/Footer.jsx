@@ -39,8 +39,8 @@ const Footer = () => {
                 </a>
               </IconLink>
           </Icons>
-
         </CompanyInfoContainer>
+        
       </div>
       <div>
         <InfoContainer>
@@ -153,6 +153,7 @@ const Title = styled.div`
 //update colors once a tag links added
 const Icons = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-top: 10px;
   width: 100%;
@@ -162,7 +163,7 @@ const Icons = styled.div`
   }
   //adjust social icons for landscape in phone
   @media only screen and (orientation: landscape) {
-    justify-content: right;
+    justify-content: center;
     padding-left: 100px;
   }
   //adjust for tablet
