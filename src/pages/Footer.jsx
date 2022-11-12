@@ -161,7 +161,7 @@ const Icons = styled.div`
   padding-top: 15px;
   }
   @media (orientation: landscape) {
-    justify-content: center;
+    justify-content: end;
   }
   //adjust for tablet
   @media (min-width: 768px) {
