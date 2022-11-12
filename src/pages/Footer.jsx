@@ -160,6 +160,9 @@ const Icons = styled.div`
   margin: auto;
   padding-top: 15px;
   }
+  @media (orientation: landscape) {
+    justify-content: flex-end;
+  }
   //adjust for tablet
   @media (min-width: 768px) {
     justify-content: center;
@@ -216,6 +219,9 @@ const SubscribeForm = styled.form`
   align-items: center;
   display: flex;
   @media (min-width: 768px) {
+    justify-content: center;
+  }
+  @media (orientation: landscape) {
     justify-content: center;
   }
 `
