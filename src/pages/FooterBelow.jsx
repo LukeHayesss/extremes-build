@@ -25,7 +25,7 @@ color: #FFFFFF;
 background-color: #000000;
 border: none;
 width: 100%;
-border-top: 1px solid #E0E0E0;
+border-top: 1px solid #696969;
 height: 80px;
 @media (max-width: 896px) {
        flex-direction: column-reverse;
