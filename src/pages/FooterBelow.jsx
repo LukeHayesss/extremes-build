@@ -27,7 +27,6 @@ border: none;
 width: 100%;
 border-top: 1px solid #E0E0E0;
 height: 80px;
-
 @media (max-width: 896px) {
        flex-direction: column-reverse;
 }

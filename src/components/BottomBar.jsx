@@ -43,7 +43,6 @@ text-align: center;
 padding: 15px;
 line-height: 19px;
 font-size: 18px;
-font-weight: 600;
 font-family: 'Rubik', sans-serif;
 color: #ffffff;
 background-color: #1a1a1a;
