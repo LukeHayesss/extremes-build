@@ -82,6 +82,7 @@ const handleClick = () => {
         </DetailCont>
         </ContainerOne>
 
+        <MiniBorder/>
         <LineHeader>Line with Date</LineHeader> 
         <LineCont>
           <LineDateCont>
@@ -96,6 +97,7 @@ const handleClick = () => {
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
         </LineCont>
 
+        <MiniBorder/>
         <FullContainer>
         <LineHeader>Interactive Heatmap</LineHeader>
         <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -110,7 +112,9 @@ const handleClick = () => {
         </HmapInteractiveCont>
         </FullContainer>
 
+        
         <FullContainerLight>
+        <MiniBorder/>
         <LineHeader>Heat and Cold Waves In 2022.</LineHeader>
         <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -124,7 +128,7 @@ const handleClick = () => {
         </HmapCont>
         </FullContainerLight>
 
-
+        <MiniBorder/>
         <Contact/>
         <BottomBar/>
         <Footer/>
@@ -315,6 +319,9 @@ padding-bottom: 30px;
   margin: 0 25px 0 25px;
   font-size: 38px;
 }
+`
+const MiniBorder = styled.div`
+border-top: 1px solid #000000;
 `
 
 

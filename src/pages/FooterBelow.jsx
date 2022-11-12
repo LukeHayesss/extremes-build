@@ -27,9 +27,9 @@ border: none;
 width: 100%;
 border-top: 1px solid #E0E0E0;
 height: 80px;
-@media (max-width: 896px) {
-    flex-direction: column-reverse;
 
+@media (max-width: 896px) {
+       flex-direction: column-reverse;
 }
 `
 
@@ -40,6 +40,7 @@ const Copyright = styled.div`
     text-align: justify;
     padding-left: 50px;
     margin: auto;
+
     @media (max-width: 896px) {
     padding-left: 0px;
     font-size: 12px;
