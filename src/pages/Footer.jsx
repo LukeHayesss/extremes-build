@@ -176,8 +176,7 @@ const IconLink = styled.div`
   @media (max-width: 896px) {
     display: flex;
     flex-direction: row;
-    padding-right: 80px;
-    margin: auto;
+    /* padding-right: 80px; */
   }
 `;
 
