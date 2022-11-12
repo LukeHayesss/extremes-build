@@ -82,6 +82,9 @@ const Logo = styled.img`
   @media (min-width: 768px) {
     height: 85px;
   }
+  @media (orientation: landscape) {
+    height: 95px;
+  }
 `;
 
 //pin the footer at the bottom//
