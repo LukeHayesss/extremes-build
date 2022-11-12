@@ -152,9 +152,9 @@ const Icons = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  width: 120px;
+  width: 100%;
   @media (max-width: 896px) {
-
+margin: auto;
   }
 
 a {
@@ -168,7 +168,7 @@ a {
 
 const IconLink = styled.div`
   color: #ffffff;
-  padding-right: 35px;
+  /* padding-right: 35px; */
   &:hover {
     color: #F4C430;
     cursor: pointer;
@@ -176,7 +176,7 @@ const IconLink = styled.div`
   @media (max-width: 896px) {
     display: flex;
     flex-direction: row;
-    /* padding-right: 80px; */
+    padding-right: 80px;
   }
 `;
 
