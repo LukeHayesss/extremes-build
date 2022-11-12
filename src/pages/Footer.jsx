@@ -79,6 +79,9 @@ const Logo = styled.img`
   @media (max-width: 896px) {
     height: 60px;
   }
+  @media (min-width: 768px) {
+    height: 85px;
+  }
 `;
 
 //pin the footer at the bottom//
@@ -156,6 +159,11 @@ const Icons = styled.div`
   @media (max-width: 896px) {
   margin: auto;
   padding-top: 15px;
+  }
+  //adjust for tablet
+  @media (min-width: 768px) {
+    justify-content: center;
+    padding-left: 72px;
   }
 
 a {
