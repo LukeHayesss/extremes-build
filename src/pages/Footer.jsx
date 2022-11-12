@@ -154,7 +154,8 @@ const Icons = styled.div`
   margin-top: 10px;
   width: 100%;
   @media (max-width: 896px) {
-margin: auto;
+  margin: auto;
+  padding-top: 15px;
   }
 
 a {
@@ -197,7 +198,7 @@ const SubscribeTitle = styled.span`
   margin-bottom: 10px;
   margin-right: auto;
   @media (max-width: 896px) {
-    font-size: 23px;
+    font-size: 19px;
     margin: auto;
     padding-bottom: 10px;
   }
