@@ -160,8 +160,9 @@ const Icons = styled.div`
   margin: auto;
   padding-top: 15px;
   }
+  //adjust social icons for landscape in phone
   @media (orientation: landscape) {
-    justify-content: end;
+    justify-content: right;
   }
   //adjust for tablet
   @media (min-width: 768px) {
