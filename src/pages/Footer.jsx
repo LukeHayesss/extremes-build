@@ -177,6 +177,7 @@ const IconLink = styled.div`
     display: flex;
     flex-direction: row;
     padding-right: 80px;
+    margin: auto;
   }
 `;
 
@@ -218,7 +219,6 @@ const SubscribeInput = styled.input`
   padding-left: 15px;
   background-color: #E0E0E0;
   ::placeholder {
-  
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
