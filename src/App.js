@@ -97,7 +97,6 @@ const handleClick = () => {
           culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
         </LineCont>
 
-        <MiniBorder/>
         <FullContainer>
         <LineHeader>Interactive Heatmap</LineHeader>
         <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -205,20 +204,21 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
-padding-bottom: 35px;
+padding-bottom: 50px;
 @media (max-width: 767px) {
   flex-direction: column;
 }
 `
 const FullContainer = styled.div`
 background-color: #EEEEEE;
-padding-bottom: 35px;
+padding-bottom: 55px;
+border-top: 1px solid #000000;
 `
 
 const FullContainerLight = styled.div`
 background-color: #f8f5f1;
 margin-top: -50px;
-padding-bottom: 55px;
+padding-bottom: 85px;
 `
 
 const DetailCont = styled.div`

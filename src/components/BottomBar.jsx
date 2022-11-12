@@ -42,12 +42,13 @@ display: block;
 text-align: center;
 padding: 15px;
 line-height: 19px;
-font-size: 13px;
+font-size: 18px;
 font-weight: 600;
-color: black;
+font-family: 'Rubik', sans-serif;
+color: #ffffff;
 /* background-color: #f8efe4; */
 /* background-color: #9F9690; */
-background-color: #E8E8E8;
+background-color: #1a1a1a;
 /* border-top: 1px solid #E0E0E0; */
 border-top: 1px solid #000000;
 border-left: none;
@@ -56,6 +57,6 @@ cursor: pointer;
 /* border: none; */
 width: 100%;
 &:hover {
-    background-color: #E0E0E0;
+    background-color: #262626;
 }
 `

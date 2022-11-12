@@ -77,7 +77,7 @@ const HomeNavLink = styled(NavLink)`
 const Logo = styled.img`
   height: 70px;
   @media (max-width: 896px) {
-    height: 65px;
+    height: 60px;
   }
 `;
 
@@ -176,7 +176,7 @@ const IconLink = styled.div`
   @media (max-width: 896px) {
     display: flex;
     flex-direction: row;
-    padding-right: 85px;
+    padding-right: 80px;
   }
 `;
 
@@ -232,6 +232,7 @@ const SubscribeButton = styled.button`
   width: 110px;
   left: 0px;
   top: 0px;
+  font-size: 17px;
   border-radius: 0.5rem;
   background: #F4C430;
   border: none;
