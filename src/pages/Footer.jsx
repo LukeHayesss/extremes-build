@@ -60,7 +60,7 @@ const Footer = () => {
             <SubscribeButton>Submit</SubscribeButton>
           </SubscribeForm>
           <SubscribeMiniText>
-            By clicking 'submit', you're agreeing to receive our <br></br>newsletter.
+            By clicking 'submit', you're agreeing to get our newsletter.
           </SubscribeMiniText>
         </SubscribeContainer>
         <FooterPin />
@@ -76,9 +76,10 @@ const HomeNavLink = styled(NavLink)`
 
 const Logo = styled.img`
   height: 70px;
-  /* margin-left: -50px; */
+  @media (max-width: 896px) {
+    height: 65px;
+  }
 `;
-
 
 //pin the footer at the bottom//
 const Wrapper = styled.div`
@@ -115,7 +116,7 @@ const InfoContainer = styled.div`
   list-style: none;
   line-height: 1.5;
   text-align: center;
-
+  //remove central menu on mobile
   @media (max-width: 896px) {
     display: none;
   }
@@ -155,7 +156,7 @@ const Icons = styled.div`
   @media (max-width: 896px) {
 
   }
-  
+
 a {
   color: white;
   &:hover {
@@ -171,6 +172,11 @@ const IconLink = styled.div`
   &:hover {
     color: #F4C430;
     cursor: pointer;
+  }
+  @media (max-width: 896px) {
+    display: flex;
+    flex-direction: row;
+    padding-right: 85px;
   }
 `;
 
@@ -190,6 +196,11 @@ const SubscribeTitle = styled.span`
   color: #ffffff;
   margin-bottom: 10px;
   margin-right: auto;
+  @media (max-width: 896px) {
+    font-size: 23px;
+    margin: auto;
+    padding-bottom: 10px;
+  }
 `
 
 const SubscribeForm = styled.form`
@@ -236,7 +247,7 @@ const SubscribeButton = styled.button`
 `
 
 const SubscribeMiniText = styled.p`
-  font-size: 12px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 500;
   text-align: left;
@@ -245,6 +256,10 @@ const SubscribeMiniText = styled.p`
   cursor: default;
   &:hover {
     color: #ffffff;
+  }
+  @media (max-width: 896px) {
+    text-align: center;
+    padding-bottom: 20px;
   }
 `
 
