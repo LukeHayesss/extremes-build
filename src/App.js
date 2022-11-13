@@ -278,7 +278,7 @@ const HomeNavLink = styled(NavLink)`
 `;
 
 const Logo = styled.img`
-  height: 120px;
+height: 120px;
 @media (max-width: 896px) {
 height: 80px;
 }
