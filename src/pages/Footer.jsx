@@ -43,12 +43,12 @@ const Footer = () => {
         
       </div>
       <div>
-        {/* <InfoContainer>
+        <InfoContainer>
           <Title>Cool Stuff</Title>
           <li>More Info</li>
           <li>About Us</li>
           <li>Terms of Use</li>
-        </InfoContainer> */}
+        </InfoContainer>
       </div>
       <div>
         <SubscribeContainer>
@@ -77,6 +77,9 @@ const HomeNavLink = styled(NavLink)`
 const Logo = styled.img`
   height: 70px;
   @media (max-width: 896px) {
+    height: 80px;
+  }
+  @media (max-width: 470px) {
     height: 60px;
   }
   @media (min-width: 768px) {
@@ -122,8 +125,9 @@ const InfoContainer = styled.div`
   list-style: none;
   line-height: 1.5;
   text-align: center;
-  //remove central menu on mobile
-  @media (max-width: 895px) {
+  margin-left: -110px;
+  //remove central menu on small screens
+  @media (max-width: 1400px) {
     display: none;
   }
 
@@ -181,7 +185,7 @@ const Icons = styled.div`
     padding-left: 0px !important;
     justify-content: space-between;
   }
-  
+
   //adjust for tablet
   @media (min-width: 768px) {
     justify-content: center;
