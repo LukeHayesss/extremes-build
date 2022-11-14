@@ -79,12 +79,15 @@ const Logo = styled.img`
   @media (max-width: 896px) {
     height: 80px;
   }
+
   @media (max-width: 470px) {
     height: 60px;
   }
+
   @media (min-width: 768px) {
     height: 85px;
   }
+
   @media (orientation: landscape) {
     height: 95px;
   }
@@ -244,9 +247,15 @@ const SubscribeForm = styled.form`
   @media (min-width: 768px) {
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
   @media (orientation: landscape) {
     justify-content: center;
   }
+  
   @media (max-width: 602px) {
     justify-content: center;
   }
