@@ -208,6 +208,7 @@ padding-bottom: 50px;
 @media (max-width: 767px) {
   flex-direction: column;
 }
+
 `
 const FullContainer = styled.div`
 background-color: #EEEEEE;

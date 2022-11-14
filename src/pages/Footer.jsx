@@ -43,12 +43,12 @@ const Footer = () => {
         
       </div>
       <div>
-        <InfoContainer>
+        {/* <InfoContainer>
           <Title>Cool Stuff</Title>
           <li>More Info</li>
           <li>About Us</li>
           <li>Terms of Use</li>
-        </InfoContainer>
+        </InfoContainer> */}
       </div>
       <div>
         <SubscribeContainer>
@@ -123,7 +123,7 @@ const InfoContainer = styled.div`
   line-height: 1.5;
   text-align: center;
   //remove central menu on mobile
-  @media (max-width: 896px) {
+  @media (max-width: 895px) {
     display: none;
   }
 
@@ -157,18 +157,31 @@ const Title = styled.div`
 const Icons = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between !important;
   margin-top: 10px;
   width: 100%;
+  padding-left: 0px !important;
+
   @media (max-width: 896px) {
   margin: auto;
   padding-top: 15px;
+  width: 35%;
   }
+
+  @media (max-width: 480px) {
+    width: 50%;
+  }
+
   //adjust social icons for landscape in phone
   @media only screen and (orientation: landscape) {
     justify-content: center;
     padding-left: 100px;
   }
+  @media (max-width: 1023px) {
+    padding-left: 0px !important;
+    justify-content: space-between;
+  }
+  
   //adjust for tablet
   @media (min-width: 768px) {
     justify-content: center;
@@ -191,11 +204,11 @@ const IconLink = styled.div`
     color: #F4C430;
     cursor: pointer;
   }
-  @media (max-width: 896px) {
+  /* @media (max-width: 896px) {
     display: flex;
-    flex-direction: row;
-    padding-right: 80px;
-  }
+    flex-direction: row; */
+    /* padding-right: 80px; */
+  /* } */
 `;
 
 //SUBSCRIBE SECTION//
@@ -228,6 +241,9 @@ const SubscribeForm = styled.form`
     justify-content: center;
   }
   @media (orientation: landscape) {
+    justify-content: center;
+  }
+  @media (max-width: 602px) {
     justify-content: center;
   }
 `
