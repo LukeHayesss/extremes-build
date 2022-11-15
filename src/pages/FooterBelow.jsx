@@ -62,6 +62,10 @@ a {
 @media (max-width: 896px) {
 padding-right: 0px;
 }
+
+@media (max-width: 320px) {
+font-size: 18px;
+}
 }
 
 `

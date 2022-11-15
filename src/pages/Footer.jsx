@@ -44,10 +44,10 @@ const Footer = () => {
       </div>
       <div>
         <InfoContainer>
-          <Title>Cool Stuff</Title>
-          <li>More Info</li>
-          <li>About Us</li>
-          <li>Terms of Use</li>
+          <Title>More Info</Title>
+          <li>Donate</li>
+          <li>Become a Member</li>
+          <li>Privacy Policy</li>
         </InfoContainer>
       </div>
       <div>
@@ -76,6 +76,11 @@ const HomeNavLink = styled(NavLink)`
 
 const Logo = styled.img`
   height: 70px;
+
+  @media (max-width: 320px) {
+    height: 50px !important;
+  }
+
   @media (max-width: 896px) {
     height: 80px;
   }
@@ -104,6 +109,10 @@ const Wrapper = styled.div`
 
   @media (max-width: 896px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 320px) {
+    padding: 3rem 2.5rem 3rem 2.5rem;
   }
 `;
 
@@ -195,6 +204,10 @@ const Icons = styled.div`
     padding-left: 72px;
   }
 
+  @media (max-width: 320px) {
+    scale: 80%;
+  }
+
 a {
   color: white;
   &:hover {
@@ -234,10 +247,15 @@ const SubscribeTitle = styled.span`
   color: #ffffff;
   margin-bottom: 10px;
   margin-right: auto;
+
   @media (max-width: 896px) {
     font-size: 19px;
     margin: auto;
     padding-bottom: 10px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 16px;
   }
 `
 
@@ -255,9 +273,13 @@ const SubscribeForm = styled.form`
   @media (orientation: landscape) {
     justify-content: center;
   }
-  
+
   @media (max-width: 602px) {
     justify-content: center;
+  }
+
+  @media (max-width: 320px) {
+    scale: 80%;
   }
 `
 
@@ -292,6 +314,7 @@ const SubscribeButton = styled.button`
   color: #000000;
   font-weight: 600;
   cursor: pointer;
+
   &:hover {
     background-color: #f0b80d;
     color: #000000;

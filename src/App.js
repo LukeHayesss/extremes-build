@@ -145,6 +145,10 @@ margin: auto;
   width: 90%;
   padding-top: 35px;
 }
+
+@media (orientation: landscape) {
+  padding-top: 35px;
+}
 `
 
 const HmapInteractiveCont = styled.div`
@@ -154,6 +158,11 @@ margin: auto;
   width: 90%;
   padding-top: 35px;
 }
+
+@media (orientation: landscape) {
+  padding-top: 35px;
+}
+
 `
 
 const LineDateCont = styled.div`
@@ -165,11 +174,15 @@ padding-left: 70px;
   padding-bottom: 35px;
   padding-left: 0px;
 }
+
+@media (max-width: 1000px) {
+  padding-left: 15px;
+}
 `
 
 const KernelCont = styled.div`
 width: 60%;
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   margin: auto;
   width: 100%;
   padding-top: 35px;
@@ -178,7 +191,7 @@ width: 60%;
 
 const DoyCont = styled.div`
 width: 60%;
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   margin: auto;
   width: 90%;
   padding-top: 35px;
@@ -219,7 +232,7 @@ border-top: 1px solid #000000;
 const FullContainerLight = styled.div`
 background-color: #f8f5f1;
 margin-top: -50px;
-padding-bottom: 85px;
+padding-bottom: 50px;
 `
 
 const DetailCont = styled.div`
@@ -229,7 +242,7 @@ flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
 padding-top: 30px;
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   flex-direction: column;
 }
 `
@@ -243,7 +256,7 @@ height: auto;
 margin: 0 70px 0 70px;
 text-align: justify;
 font-weight: 300;
-@media (max-width: 896px) {
+@media (max-width: 1000px) {
   width: auto;
   margin: 0 25px 0 25px;
 }
@@ -280,12 +293,18 @@ const HomeNavLink = styled(NavLink)`
 
 const Logo = styled.img`
 height: 120px;
+
 @media (max-width: 896px) {
 height: 80px;
 }
+
 @media (min-width: 768px) {
 height: 90px;
-  }
+}
+
+@media (max-width: 320px) {
+height: 60px;
+}
 `;
 
 const NavMenu = styled.div`

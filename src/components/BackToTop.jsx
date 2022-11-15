@@ -47,6 +47,19 @@ const Icon = styled.div`
     z-index: 20;
     color: #F4C430;
     cursor: pointer;
+
+    @media (max-width: 320px) {
+    scale: 60%;
+    bottom: 5px;
+    right: 5px;
+    }
+
+    @media (max-width: 768px) {
+        scale: 70%;
+        bottom: 8px;
+        right: 8px;
+    }
+
     &:hover {
         color: darkgray;
     };
