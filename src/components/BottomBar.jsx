@@ -44,7 +44,7 @@ padding: 15px;
 line-height: 19px;
 font-size: 18px;
 font-family: 'Rubik', sans-serif;
-color: #696969;
+color: #ffffff;
 background-color: #1a1a1a;
 border-top: 1px solid #000000;
 border-left: none;
