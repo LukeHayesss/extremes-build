@@ -53,14 +53,11 @@ margin-bottom: 20px;
   scale: 70%;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 751px) {
   scale: 60%;
   margin-bottom: 10px;
 }
 
-@media (max-width: 896px) {
-  
-}
 &:hover {
     @-webkit-keyframes hvr-hang {
   0% {
