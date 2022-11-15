@@ -53,6 +53,11 @@ border-bottom: 1px solid #696969;
 cursor: pointer;
 /* border: none; */
 width: 100%;
+
+@media (max-width: 770px) {
+    font-size: 12px;
+}
+
 &:hover {
     background-color: #262626;
 }

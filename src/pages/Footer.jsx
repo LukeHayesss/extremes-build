@@ -154,7 +154,8 @@ const InfoContainer = styled.div`
   li:hover {
     cursor: pointer;
     color: #F4C430;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    text-decoration: none;
     }
 `;
 
@@ -327,7 +328,7 @@ const SubscribeMiniText = styled.p`
   font-weight: 500;
   text-align: left;
   margin-top: 16px;
-  color: #ffffff;
+  color: #696969;
   cursor: default;
   &:hover {
     color: #ffffff;

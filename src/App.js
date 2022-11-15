@@ -260,6 +260,10 @@ font-weight: 300;
   width: auto;
   margin: 0 25px 0 25px;
 }
+
+@media (max-width: 768px) {
+  font-size: 16px;
+}
 `
 
 const BodyDeetsFull = styled.div`
@@ -274,6 +278,10 @@ text-align: center;
   width: auto;
   margin: 0 25px 0 25px;
   text-align: justify;
+}
+
+@media (max-width: 768px) {
+  font-size: 16px;
 }
 `
 
@@ -341,6 +349,10 @@ padding-bottom: 30px;
   width: auto;
   margin: 0 25px 0 25px;
   font-size: 38px;
+}
+
+@media (max-width: 425px) {
+  font-size: 28px;
 }
 `
 const MiniBorder = styled.div`

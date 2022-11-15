@@ -34,7 +34,7 @@ height: 80px;
 
 const Copyright = styled.div`
     flex: 50%;
-    color: white;
+    color: #696969;
     font-size: 22px;
     text-align: justify;
     padding-left: 50px;
@@ -63,8 +63,8 @@ a {
 padding-right: 0px;
 }
 
-@media (max-width: 320px) {
-font-size: 18px;
+@media (max-width: 425px) {
+font-size: 16px;
 }
 }
 

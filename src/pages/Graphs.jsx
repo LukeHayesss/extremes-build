@@ -37,6 +37,10 @@ padding-top: 30px;
   margin: 0 25px 0 25px;
   font-size: 38px;
 }
+
+@media (max-width: 425px) {
+  font-size: 28px;
+}
 `
 // const Para = styled.div`
 // font-family: Arial, Helvetica, sans-serif;

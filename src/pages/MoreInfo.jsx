@@ -33,6 +33,11 @@ color: black;
   margin: 0 25px 0 25px;
   font-size: 38px;
 }
+
+@media (max-width: 425px) {
+  font-size: 28px;
+  padding-top: 10px;
+}
 `
 
 const Container = styled.div`
@@ -43,6 +48,16 @@ const Icon = styled.div`
 color: #f4c430;
 cursor: pointer;
 margin-bottom: 20px;
+
+@media (max-width: 1000px) {
+  scale: 70%;
+}
+
+@media (max-width: 425px) {
+  scale: 60%;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 896px) {
   
 }
