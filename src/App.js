@@ -115,7 +115,7 @@ const handleClick = () => {
         <FullContainerLight>
         <MiniBorder/>
         <LineHeader>Heat and Cold Waves In 2022.</LineHeader>
-        <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        <BodyDeetsFull>"Lorem ipsum doloor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
@@ -300,7 +300,9 @@ const HomeNavLink = styled(NavLink)`
 `;
 
 const Logo = styled.img`
-height: 120px;
+@media (min-width: 1024px) {
+height: 120px !important;  
+}
 
 @media (max-width: 896px) {
 height: 80px;

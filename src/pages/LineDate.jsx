@@ -9,7 +9,7 @@ import * as fc from 'd3fc';
 const node = document.createElement('div')
 
 // set the dimensions and margins of the graph
-const margin = { top: 40, right: 30, bottom: 31, left: 60 },
+const margin = { top: 40, right: 30, bottom: 30, left: 60 },
 width = 990 - margin.left - margin.right,
 height = 600 - margin.top - margin.bottom;
 
@@ -23,9 +23,10 @@ const svg = d3
 // .attr("height", height + margin.top + margin.bottom)
 .append("g")
 .attr("transform", `translate(${margin.left},${margin.top})`);
-
+//console.log(data7, 'test fcvars')
 //Read the data
 Promise.all([d3.csv(data5), d3.csv(data6), d3.csv(data7)])
+//console.log(data7, 'test fcvars after promise')
 .then(([yearTemp, yearBounds, nextTemp]) => {
     const dataTemp = yearTemp.map(function (d) {
         return { date: d3.timeParse("%Y-%m-%d")(d.time), 

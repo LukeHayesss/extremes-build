@@ -23,7 +23,7 @@ const BackToTop = () => {
     };
 
     return (
-        <TopToBtm>
+        <TopToBtm className='buttontop'>
             {" "}
             {showTopBtn && (
             <Icon>

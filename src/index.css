@@ -14,12 +14,28 @@ code {
 
 .map {
   height: 80vh;
-  /* fits map centrally */
-  /* width: 52%; */
-  margin:0;
+  margin:auto;
   padding: 0;
-  width: 100%;
+  width: 50%;
 }
 .leaflet-container {
   background: #aad3df !important;
+  z-index: 1000;
 }
+
+.tiles {
+  height: 80vh;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+
+.leaflet-control-layers-toggle {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.tiffy {
+  background-repeat: no-repeat !important;
+}
+

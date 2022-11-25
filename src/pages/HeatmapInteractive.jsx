@@ -3,11 +3,12 @@ import * as d3 from 'd3';
 import React from 'react';
 import data2 from '../data/hmap_current_year.csv';
 
+
 const node = document.createElement('div');
+// node.setAttribute("id","hmap")
 
  // set the dimensions and margins of the graph
  const margin = { top: 30, right: 60, bottom: 30, left: 60 },
-
  width = 1400 - margin.left - margin.right,
  height = 630 - margin.top - margin.bottom;
 
@@ -56,7 +57,6 @@ d3.csv(data2).then(function (data) {
      .attr("transform", `translate(0, ${height})`)
      .call(d3.axisBottom(x))
      .call(g => g.select(".domain").remove());
-
      svg.append("g")
      .call(d3.axisTop(x))
      .call(g => g.select(".domain").remove());
@@ -88,34 +88,36 @@ d3.csv(data2).then(function (data) {
     ]);
 
  // create a tooltip
- const tooltip = d3.select(node)
-     .append('div')
-     .style("opacity", 0.8)
+ //we will not be needing a tooltip anymore, build the values into the rects
+ const tooltip = d3
+     .select(node)
+     .append("div")
+     .style("opacity", 0)
      .attr("class", "tooltip")
-     .style("background-color", "black")
+     .style("background-color", "white")
      .style("border", "solid")
      .style("border-width", "2px")
      .style("border-radius", "5px")
      .style("padding", "5px")
-     .style("margin-bottom", '51px')
+     .style("margin-bottom", "51px")
 
  // Three function that change the tooltip when user hover / move / leave a cell
  const mouseover = function (event, d) {
-         tooltip
-         .style("opacity", 1)
+         tooltip.style("opacity", 1)
          d3.select(this)
          .style("stroke", "black")
          .style("opacity", 1)
  }
+
  const mousemove = function (event, d) {
-         tooltip
-         .html("The exact value of<br>this cell is: " + d.value)
-         .style("left", (event.x) / 2 + "px")
-         .style("top", (event.y) / 2 + "px")
- }
+    tooltip
+        .html("The exact value of<br>this cell is: " + d.value)
+        .style("opacity", 1)
+        .style("left", (event.x) + 20 + "px")
+        .style("top", (event.y) + 20 + "px")
+ };
  const mouseleave = function (event, d) {
-         tooltip
-         .style("opacity", 0)
+         tooltip.style("opacity", 0)
          d3.select(this)
          .style("stroke", "none")
          .style("opacity", 1)
@@ -133,6 +135,22 @@ d3.csv(data2).then(function (data) {
      .on("mouseover", mouseover)
      .on("mousemove", mousemove)
      .on("mouseleave", mouseleave)
+     
+    //  it is working
+    //   .on("mouseover", (event, d) => {
+    //      console.log(event)
+    //      console.log(d)
+    //      tooltip.style("visibility", "visible")
+    //             .text("The exact value of<br>this cell is: " + d.value)
+    //   })
+
+    //   .on("mousemove", (event, d) => {
+    //     tooltip.style("left", (event.x) / 2 + "px")
+    //            .style("top", (event.y) / 2 + "px")
+    //  })
+    //  .on("mouseleave", () => {
+    //     tooltip.style('visibility', 'hidden')
+    //  })
 });
 
 const RD3Component = rd3.Component;
