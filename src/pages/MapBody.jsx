@@ -1,9 +1,13 @@
-import React from "react";
-import {TileLayer, MapContainer, LayersControl, LayerGroup, Popup, FeatureGroup} from 'react-leaflet';
+import React, { useState } from "react";
+import {TileLayer, MapContainer, LayersControl, useMapEvents, LayerGroup, Popup, FeatureGroup, Marker} from 'react-leaflet';
 import AddLocate from "../components/AddLocate";
 import { Helmet } from 'react-helmet';
 import styled from "styled-components";
 import PopupInfo from "./PopupInfo";
+import 'leaflet/dist/leaflet.css';
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import L from 'leaflet';
 
 //data access
 import tmin from '../data/tmin.tiff';
@@ -15,6 +19,13 @@ import TminLayer from './TminLayer';
 import TmaxLayer from "./TmaxLayer";
 import TminAnomLayer from "./TminAnomLayer";
 import TmaxAnomLayer from "./TmaxAnomLayer";
+
+//use the correct marker icons
+let DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow
+});
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapBody = () => {
   const center = [0, 0];
@@ -30,8 +41,8 @@ const MapBody = () => {
     <ParentCont>
     <MapContainer className="map" center={center} zoom={2} scrollWheelZoom={false} doubleClickZoom={true}>
 
-      <PopupInfo/> 
-      
+<PopupInfo/>
+
 {/* menu for selecting layers */}
       <LayersControl position="topright">  
       

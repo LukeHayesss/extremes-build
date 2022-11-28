@@ -56,5 +56,4 @@ p {
 }
 
 `
-
 export default GlobalStyles;
