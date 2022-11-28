@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {TileLayer, MapContainer, LayersControl, useMapEvents, LayerGroup, Popup, FeatureGroup, Marker} from 'react-leaflet';
+import {TileLayer, MapContainer, LayersControl} from 'react-leaflet';
 import AddLocate from "../components/AddLocate";
 import { Helmet } from 'react-helmet';
 import styled from "styled-components";
