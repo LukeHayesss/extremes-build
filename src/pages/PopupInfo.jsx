@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useMapEvents, Popup, Marker} from "react-leaflet";
 
-
 const PopupInfo = () => {
     const [markers, setMarkers] = useState([]);
 
@@ -9,7 +8,7 @@ const PopupInfo = () => {
         click(e) {
             const newMarker = e.latlng
             setMarkers([...markers, newMarker]);
-            console.log(e.latlng)
+            // console.log(e.latlng)
         },
     })
 

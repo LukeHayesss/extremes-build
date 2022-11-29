@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {TileLayer, MapContainer, LayersControl} from 'react-leaflet';
-import AddLocate from "../components/AddLocate";
 import { Helmet } from 'react-helmet';
 import styled from "styled-components";
 import PopupInfo from "./PopupInfo";
@@ -8,6 +7,7 @@ import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from 'leaflet';
+import LeafletMyPosition from "./LeafletMyPosition";
 
 //data access
 import tmin from '../data/tmin.tiff';
@@ -71,13 +71,13 @@ const MapBody = () => {
         <TmaxAnomLayer className="tmaxanom" url={tmaxanom}/>
       </LayersControl.Overlay>
 
-
 {/* cant use LayersControl.Overlay for the layers cause they don't work well with Layergroup */}
 {/* cant do each layer as baselayer cause then doesnt have geographical data, 
 so must use Overlay, but then each Overlay layer is duplicated in options menu... */}
 
       </LayersControl>
-      <AddLocate/>
+      {/* <AddLocate/> */}
+      <LeafletMyPosition/>
     </MapContainer>
     </ParentCont>
   </>
