@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import {TileLayer, MapContainer, LayersControl} from 'react-leaflet';
+import React from "react";
+import {TileLayer, MapContainer, LayersControl, LayerGroup} from 'react-leaflet';
 import { Helmet } from 'react-helmet';
 import styled from "styled-components";
 import PopupInfo from "./PopupInfo";
@@ -39,14 +39,18 @@ const MapBody = () => {
       />
     </Helmet>
     <ParentCont>
-    <MapContainer className="map" center={center} zoom={2} scrollWheelZoom={false} doubleClickZoom={true}>
-
-<PopupInfo/>
+    <MapContainer 
+    className="map" 
+    center={center} 
+    zoom={2} 
+    scrollWheelZoom={false} 
+    doubleClickZoom={true}>
+     <PopupInfo/>
 
 {/* menu for selecting layers */}
       <LayersControl position="topright">  
       
-      <LayersControl.BaseLayer checked name="Base Layer">
+      <LayersControl.BaseLayer checked name="Base Map">
         <TileLayer 
         className="tile"
         name="Base Layer"
@@ -64,7 +68,7 @@ const MapBody = () => {
         noWrap={true}/>
       </LayersControl.BaseLayer>
 
-      <LayersControl.BaseLayer name='Satellite'>
+      <LayersControl.BaseLayer name='Satellite Map'>
         <TileLayer
         className="satellite"
         url='https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
@@ -73,19 +77,19 @@ const MapBody = () => {
         />
       </LayersControl.BaseLayer>
       
-      <LayersControl.Overlay name="TMIN">
+      <LayersControl.Overlay name="T-Min">
         <TminLayer className="min" url={tmin}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="TMAX">
+      <LayersControl.Overlay name="T-Max">
         <TmaxLayer name="TMAX" className="max" url={tmax}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="TMIN ANOM">
+      <LayersControl.Overlay name="T-Min Anom">
         <TminAnomLayer className="tminanom" url={tminanom}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="TMAX ANOM">
+      <LayersControl.Overlay name="T-Max Anom">
         <TmaxAnomLayer className="tmaxanom" url={tmaxanom}/>
       </LayersControl.Overlay>
 

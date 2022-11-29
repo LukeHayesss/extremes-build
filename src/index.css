@@ -44,3 +44,10 @@ code {
   margin: 0px;
   padding: 0px;
 }
+
+/* target the zoom control sizes */
+.leaflet-control-zoom-in {
+  width: 1px;
+} span {
+  font-size: 20px;
+}
