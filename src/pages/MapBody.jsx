@@ -8,6 +8,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from 'leaflet';
 import LeafletMyPosition from "./LeafletMyPosition";
+import ResetViewControl from '@20tab/react-leaflet-resetview';
 
 //data access
 import tmin from '../data/tmin.tiff';
@@ -46,7 +47,11 @@ const MapBody = () => {
     scrollWheelZoom={false} 
     doubleClickZoom={true}>
      <PopupInfo/>
-
+     <ResetViewControl 
+     title="Reset View"
+     icon="↺"
+     />
+         
 {/* menu for selecting layers */}
       <LayersControl position="topright">  
       

@@ -49,5 +49,17 @@ code {
 .leaflet-control-zoom-in {
   width: 1px;
 } span {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+/* .leaflet-control-attribution {
+  margin-top: 1px;
+} span {
+  font-size: 10px;
+} */
+
+
+
+\21BA {
+  width: 100px;
 }
