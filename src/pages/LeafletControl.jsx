@@ -7,6 +7,7 @@ const ControlClasses = {
     topleft: "leaflet-top leaflet-left",
     topright: "leaflet-top leaflet-right",
 };
+
 const LeafletControl = ({ position, children, }) => {
     const divRef = useRef(null);
     useEffect(() => {

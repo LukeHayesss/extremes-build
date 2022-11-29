@@ -76,7 +76,6 @@ const MapBody = () => {
 so must use Overlay, but then each Overlay layer is duplicated in options menu... */}
 
       </LayersControl>
-      {/* <AddLocate/> */}
       <LeafletMyPosition/>
     </MapContainer>
     </ParentCont>

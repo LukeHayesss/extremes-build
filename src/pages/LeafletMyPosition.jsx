@@ -1,12 +1,13 @@
 import { ActionIcon } from "@mantine/core";
 import React, { useState } from "react";
 import { useMapEvents } from "react-leaflet";
-import { CurrentLocation } from "tabler-icons-react";
 import LeafletControl from "./LeafletControl";
+import { FaLocationArrow } from "react-icons/fa";
+import styled from "styled-components";
 
 const LeafletMyPosition = ({ zoom = 17 }) => {
     const [loading, setLoading] = useState(false);
-    
+
     const map = useMapEvents({
         locationfound(e) {
             map.flyTo(e.latlng, zoom);
@@ -22,12 +23,19 @@ const LeafletMyPosition = ({ zoom = 17 }) => {
               map.locate();
             }}
             loading={loading}
-            variant={"filled"}
+            variant={"light"}
           >
-            <CurrentLocation />
+            <Icon>
+              <FaLocationArrow size={17}/>
+            </Icon>
           </ActionIcon>
         </LeafletControl>
       );
     };
 
 export default LeafletMyPosition;
+
+const Icon = styled.div`
+  color: black; 
+  padding-top: 3px;
+`
