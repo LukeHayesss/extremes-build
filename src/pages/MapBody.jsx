@@ -55,6 +55,24 @@ const MapBody = () => {
         noWrap={true}/>
       </LayersControl.BaseLayer>
 
+      <LayersControl.BaseLayer name='Topo Map'>
+        <TileLayer
+        className="topo"
+        attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+        url='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
+        maxZoom={17}
+        noWrap={true}/>
+      </LayersControl.BaseLayer>
+
+      <LayersControl.BaseLayer name='Satellite'>
+        <TileLayer
+        className="satellite"
+        url='https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
+        subdomains={['mt1','mt2','mt3']}
+        noWrap={true}
+        />
+      </LayersControl.BaseLayer>
+      
       <LayersControl.Overlay name="TMIN">
         <TminLayer className="min" url={tmin}/>
       </LayersControl.Overlay>
