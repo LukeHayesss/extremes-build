@@ -52,14 +52,138 @@ code {
   font-size: 18px;
 }
 
-/* .leaflet-control-attribution {
-  margin-top: 1px;
-} span {
-  font-size: 10px;
-} */
+/* css for d3 plots */
+
+/* kernal css */
+#temp_pdf .pdf_curve {
+  fill: #F3C42F;
+  fill-opacity: 0.8;
+  stroke: "none";
+}
+.pdf_curve_max {
+    fill: #b13333;
+    fill-opacity: 0.5;
+    stroke: "none";
+  }
+
+.pdf_curve_min {
+  fill: #284565;
+  fill-opacity: 0.5;
+  stroke: "none";
+}
+
+.todayColor{
+    fill:#b22222
+}
+
+.todayColorX{
+  fill:#b22222
+}
+
+.todayColorN{
+  fill:#0B3360;
+}
+
+.nextTemp {
+  fill: "none";
+  stroke-width: 3;
+  stroke: #b22222;
+  }
+
+.nextTempX {
+fill: "none";
+stroke-width: 3;
+stroke: #b22222;
+}
+
+.nextTempN {
+  fill: "none";
+  stroke-width: 3;
+  stroke: #0B3360;
+  }
+
+.ptileTemp {
+    fill: "none";
+    stroke-width: 1;
+    stroke: #000;
+    stroke-dasharray: 5,5
+    }
+
+.ptileTempX {
+  fill: "none";
+  stroke-width: 1;
+  stroke: #b22222;
+  stroke-dasharray: 5,5
+  }
+
+.ptileTempN {
+  fill: "none";
+  stroke-width: 1;
+  stroke: #0B3360;
+  stroke-dasharray: 5,5
+  }
+
+.ptileTextX {
+  fill: #b22222;
+  font-size: 0.8em;
+}
+
+.ptileTextN {
+  fill:#0B3360;
+  font-size: 0.8em;
+}
+
+.xaxis_title, .yaxis_title {
+    fill: #000;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+/* line date */
+.medianTmax {
+    fill: none;
+    stroke-width: 1;
+    stroke: #b22222;
+    stroke-dasharray: 3,3;
+}
 
 
+.medianTmin {
+    stroke-width: 1;
+    stroke: #0B3360;
+    stroke-dasharray: 3,3
+}
 
-\21BA {
-  width: 100px;
+.boundsTmax{
+    fill: #b22222;
+    opacity: 0.5;
+    stroke: 'none';
+}
+
+.boundsTmin{
+    fill: #0B3360;
+    opacity: 0.5;
+    stroke: 'none';
+}
+
+.yearTmax{
+    fill: "none";
+    stroke: #b22222;
+    stroke-width: 1.5;
+}
+
+.yearTmin{
+    fill: "none";
+    stroke: #0B3360;
+    stroke-width: 1.5;
+}
+
+.nextTmin{
+    fill:#0B3360;
+  
+}
+
+.nextTmax{
+  fill:#b22222;
+
 }

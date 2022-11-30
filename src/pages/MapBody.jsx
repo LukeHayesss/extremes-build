@@ -78,30 +78,37 @@ const MapBody = () => {
         className="satellite"
         url='https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
         subdomains={['mt1','mt2','mt3']}
-        noWrap={true}
-        />
+        noWrap={true}/>
       </LayersControl.BaseLayer>
-      
+        
       <LayersControl.Overlay name="T-Min">
-        <TminLayer className="min" url={tmin}/>
+      {/* <LayerGroup> */}
+        <TminLayer className="min" url={tmin} />
+      {/* </LayerGroup> */}
       </LayersControl.Overlay>
+      
 
+      <LayerGroup>
       <LayersControl.Overlay name="T-Max">
         <TmaxLayer name="TMAX" className="max" url={tmax}/>
       </LayersControl.Overlay>
+      </LayerGroup>
 
+      <LayerGroup>
       <LayersControl.Overlay name="T-Min Anom">
         <TminAnomLayer className="tminanom" url={tminanom}/>
       </LayersControl.Overlay>
+      </LayerGroup>
 
+      <LayerGroup>
       <LayersControl.Overlay name="T-Max Anom">
         <TmaxAnomLayer className="tmaxanom" url={tmaxanom}/>
       </LayersControl.Overlay>
-
+      </LayerGroup>
 {/* cant use LayersControl.Overlay for the layers cause they don't work well with Layergroup */}
 {/* cant do each layer as baselayer cause then doesnt have geographical data, 
 so must use Overlay, but then each Overlay layer is duplicated in options menu... */}
-
+       
       </LayersControl>
       <LeafletMyPosition/>
     </MapContainer>
