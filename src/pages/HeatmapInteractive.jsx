@@ -3,12 +3,10 @@ import * as d3 from 'd3';
 import React from 'react';
 import data2 from '../data/hmap_current_year.csv';
 
-
 const node = document.createElement('div');
-// node.setAttribute("id","hmap")
 
  // set the dimensions and margins of the graph
- const margin = { top: 30, right: 60, bottom: 30, left: 60 },
+ const margin = { top: 90, right: 60, bottom: 30, left: 60 },
  width = 1400 - margin.left - margin.right,
  height = 630 - margin.top - margin.bottom;
 
@@ -32,125 +30,83 @@ d3.csv(data2).then(function (data) {
      }
  })
 
- const myGroups = Array.from({ length: 31 }, (_, i) => i + 1)
- const myMonths = [
-    "Jan", 
-    "Feb", 
-    "Mar", 
-    "Apr", 
-    "May", 
-    "Jun", 
-    "Jul", 
-    "Aug", 
-    "Sep", 
-    "Oct", 
-    "Nov", 
-    "Dec"
-    ]
+ const myDays = Array.from({ length: 31 }, (_, i) => i + 1)
+        const myMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
- // Build X scales and axis:
- const x = d3.scaleBand()
-     .range([0, width])
-     .domain(myGroups)
-     .padding(0.01);
-     svg.append("g")
-     .attr("transform", `translate(0, ${height})`)
-     .call(d3.axisBottom(x))
-     .call(g => g.select(".domain").remove());
-     svg.append("g")
-     .call(d3.axisTop(x))
-     .call(g => g.select(".domain").remove());
+        // Build X scales and axis:
+        const x = d3.scaleBand()
+            .range([0, width])
+            .domain(myDays)
+            .padding(0.01);
+        svg.append("g")
+            .attr("transform", `translate(0, ${height})`)
+            .call(d3.axisBottom(x))
+            .select(".domain")
+            .remove();
 
- // Build X scales and axis:
- const y = d3.scaleBand()
-     .range([0, height])
-     .domain(myMonths)
-     .padding(0.01);
-     svg.append("g")
-     .call(d3.axisLeft(y))
-     .call(g => g.select(".domain").remove());
-     svg.append("g")
-     .call(d3.axisRight(y))
-     .attr("transform", `translate(${width}, 0)`)
-     .call(g => g.select(".domain").remove());
+        svg.append("g")
+            .call(d3.axisTop(x))
+            .select(".domain")
+            .remove();
 
- // Build color scale
- const myColor = d3.scaleQuantile()
-     .domain([0, 5, 20, 40, 60, 80, 95, 100])
-     .range([
-        "#08306B", 
-        "#2171B5", 
-        "#6BAED6", 
-        "#FFFFFF", 
-        "#FCBBA1", 
-        "#FA6A4A", 
-        "#CB181D"
-    ]);
+        // Build X scales and axis:
+        const y = d3.scaleBand()
+            .range([0, height])
+            .domain(myMonths)
+            .padding(0.01);
+        svg.append("g")
+            .call(d3.axisLeft(y))
+            .select(".domain")
+            .remove();
+        svg.append("g")
+            .call(d3.axisRight(y))
+            .attr("transform", `translate(${width}, 0)`)
+            .select(".domain")
+            .remove();
 
- // create a tooltip
- //we will not be needing a tooltip anymore, build the values into the rects
- const tooltip = d3
-     .select(node)
-     .append("div")
-     .style("opacity", 0)
-     .attr("class", "tooltip")
-     .style("background-color", "white")
-     .style("border", "solid")
-     .style("border-width", "2px")
-     .style("border-radius", "5px")
-     .style("padding", "5px")
-     .style("margin-bottom", "51px")
+        svg.append("text")
+            .attr("class", "plot_title")
+            .attr("x", width / 2)
+            .attr("y", -60)
+            .attr("text-anchor", "middle")
+            .style("font-family", "rubik")
+            .style("font-size", '34px')
+            .style("font-weight", '700')
+            .text("Mean daily temperature in " + new Date().getFullYear());
 
- // Three function that change the tooltip when user hover / move / leave a cell
- const mouseover = function (event, d) {
-         tooltip.style("opacity", 1)
-         d3.select(this)
-         .style("stroke", "black")
-         .style("opacity", 1)
- }
 
- const mousemove = function (event, d) {
-    tooltip
-        .html("The exact value of<br>this cell is: " + d.value)
-        .style("opacity", 1)
-        .style("left", (event.x) + 20 + "px")
-        .style("top", (event.y) + 20 + "px")
- };
- const mouseleave = function (event, d) {
-         tooltip.style("opacity", 0)
-         d3.select(this)
-         .style("stroke", "none")
-         .style("opacity", 1)
- }
+        // Build color scale
+        const myColor = d3.scaleQuantile()
+            .domain([0, 5, 20, 40, 60, 80, 95, 100])
+            .range(["#08306B", "#2171B5", "#6BAED6", "#FFFFFF", "#FCBBA1", "#FA6A4A", "#CB181D"]);
 
- svg.selectAll()
-     .data(var0)
-     .join("rect")
-     .attr("x", function (d) { return x(d.day) })
-     .attr("y", function (d) { return y(myMonths[d.month]) })
-     .attr("width", x.bandwidth())
-     .attr("height", y.bandwidth())
-     .style("fill", function (d) { return myColor(d.value) })
-     .style("stroke", "none")
-     .on("mouseover", mouseover)
-     .on("mousemove", mousemove)
-     .on("mouseleave", mouseleave)
-     
-    //  it is working
-    //   .on("mouseover", (event, d) => {
-    //      console.log(event)
-    //      console.log(d)
-    //      tooltip.style("visibility", "visible")
-    //             .text("The exact value of<br>this cell is: " + d.value)
-    //   })
+        svg.selectAll()
+            .data(var0)
+            .join("rect")
+            .attr("x", function (d) { return x(d.day) })
+            .attr("y", function (d) { return y(myMonths[d.month]) })
+            .attr("width", x.bandwidth())
+            .attr("height", y.bandwidth())
+            .style("fill", function (d) { return myColor(d.value) })
+            .style("stroke", "none")
 
-    //   .on("mousemove", (event, d) => {
-    //     tooltip.style("left", (event.x) / 2 + "px")
-    //            .style("top", (event.y) / 2 + "px")
-    //  })
-    //  .on("mouseleave", () => {
-    //     tooltip.style('visibility', 'hidden')
-    //  })
+        var bar = svg
+            .selectAll(".hmlabel")
+            .data(var0)
+            .enter()
+            .append("g")
+            .attr("class", "hmlabel")
+            .attr("text-anchor", "middle")
+            .style("font-family", "rubik")
+
+
+            .attr("transform", `translate(${x.bandwidth() / 2},${y.bandwidth() / 2})`);
+        bar
+            .append("text")
+            .attr("x", (d) => x(d.day))
+            .attr("y", (d) => y(myMonths[d.month]))
+            .attr("dy", ".35em")
+            .text((d) => parseInt(d.value));
 });
 
 const RD3Component = rd3.Component;

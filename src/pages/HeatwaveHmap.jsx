@@ -119,6 +119,8 @@ const node = document.createElement('div');
             .enter()
             .append("g")
             .attr("class", "hmlabel")
+            .attr("text-anchor", "middle")
+
             .attr("transform", `translate(${x.bandwidth() / 2},${y.bandwidth() / 2})`);
         bar
             .append("text")

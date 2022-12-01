@@ -54,7 +54,7 @@ const handleClick = () => {
         
         <ContainerOne>
         <DetailCont>
-        <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        <BodyDeets>"Lorem ipsum dolor sit ameet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
@@ -154,6 +154,7 @@ margin: auto;
 const HmapInteractiveCont = styled.div`
 width: 80%;
 margin: auto;
+padding-bottom: 50px;
 @media (max-width: 767px) {
   width: 90%;
   padding-top: 35px;
