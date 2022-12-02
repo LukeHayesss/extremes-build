@@ -90,7 +90,7 @@ d3.csv(data2).then(function (data) {
             .style("fill", function (d) { return myColor(d.value) })
             .style("stroke", "none")
 
-        var bar = svg
+        const bar = svg
             .selectAll(".hmlabel")
             .data(var0)
             .enter()
@@ -98,8 +98,6 @@ d3.csv(data2).then(function (data) {
             .attr("class", "hmlabel")
             .attr("text-anchor", "middle")
             .style("font-family", "rubik")
-
-
             .attr("transform", `translate(${x.bandwidth() / 2},${y.bandwidth() / 2})`);
         bar
             .append("text")

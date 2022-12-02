@@ -28,7 +28,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
 .then(([tempDoy, nextTemp]) => {
 
     // Create variable of doy temperatures (units)
-    var doyTempC = tempDoy.map(function (d) {
+    const doyTempC = tempDoy.map(function (d) {
         return { tmax: kelvin2celsius(d.tmax), tmin: kelvin2celsius(d.tmin) }
     })
 

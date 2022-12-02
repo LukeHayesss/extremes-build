@@ -89,7 +89,7 @@ const node = document.createElement('div');
             .style("font-weight", '700')
 
         // Build color scale
-        var colorScale = d3.scaleLinear()
+        const colorScale = d3.scaleLinear()
             .domain([0, 10])
             .range([0, 1])
 
@@ -113,14 +113,13 @@ const node = document.createElement('div');
             .style("fill", function (d) { return d.ECF > 0 ? d3.interpolateBuPu(colorScale(d.ECF)) : "none" })
             .style("stroke", "none")
 
-        var bar = svg
+        const bar = svg
             .selectAll(".hmlabel")
             .data(hmdata)
             .enter()
             .append("g")
             .attr("class", "hmlabel")
             .attr("text-anchor", "middle")
-
             .attr("transform", `translate(${x.bandwidth() / 2},${y.bandwidth() / 2})`);
         bar
             .append("text")

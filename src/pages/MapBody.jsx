@@ -16,6 +16,7 @@ import tmax from '../data/tmax.tiff';
 import tminanom from '../data/tmin_anom.tiff';
 import tmaxanom from '../data/tmax_anom.tiff';
 
+//data parsing
 import TminLayer from './TminLayer';
 import TmaxLayer from "./TmaxLayer";
 import TminAnomLayer from "./TminAnomLayer";
@@ -40,6 +41,7 @@ const MapBody = () => {
       />
     </Helmet>
     <ParentCont>
+
     <MapContainer 
     className="map" 
     center={center} 
@@ -82,29 +84,21 @@ const MapBody = () => {
       </LayersControl.BaseLayer>
         
       <LayersControl.Overlay name="T-Min">
-      {/* <LayerGroup> */}
-        <TminLayer className="min" url={tmin} />
-      {/* </LayerGroup> */}
+        <TminLayer url={tmin}/>
       </LayersControl.Overlay>
       
-
-      <LayerGroup>
       <LayersControl.Overlay name="T-Max">
-        <TmaxLayer name="TMAX" className="max" url={tmax}/>
+        <TmaxLayer url={tmax}/>
       </LayersControl.Overlay>
-      </LayerGroup>
 
-      <LayerGroup>
       <LayersControl.Overlay name="T-Min Anom">
-        <TminAnomLayer className="tminanom" url={tminanom}/>
+        <TminAnomLayer url={tminanom}/>
       </LayersControl.Overlay>
-      </LayerGroup>
 
-      <LayerGroup>
       <LayersControl.Overlay name="T-Max Anom">
-        <TmaxAnomLayer className="tmaxanom" url={tmaxanom}/>
+        <TmaxAnomLayer url={tmaxanom}/>
       </LayersControl.Overlay>
-      </LayerGroup>
+   
 {/* cant use LayersControl.Overlay for the layers cause they don't work well with Layergroup */}
 {/* cant do each layer as baselayer cause then doesnt have geographical data, 
 so must use Overlay, but then each Overlay layer is duplicated in options menu... */}
