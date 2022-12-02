@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import proj4 from "proj4";
 import { useLeafletContext } from "@react-leaflet/core";
-import { useMap } from "react-leaflet";
+import { LayerGroup, useMap } from "react-leaflet";
 import parseGeoraster from "georaster";
 import GeoRasterLayer from "georaster-layer-for-leaflet";
 import chroma from "chroma-js";
@@ -37,7 +37,7 @@ const TminLayer = ({ url }) => {
             }
             
             options.georaster = georaster;
-            console.log("georaster:", georaster)
+            // console.log("georaster:", georaster)
 
             geoTiffLayerRef.current = new GeoRasterLayer(options);
             container.addLayer(geoTiffLayerRef.current);
@@ -45,7 +45,7 @@ const TminLayer = ({ url }) => {
             })
         })
         return () => {
-            // container.removeLayer(geoTiffLayerRef.current)
+            // container.removeLayer(geoTiffLayerRef.current);
         };
     }, [context, url, map]);
 

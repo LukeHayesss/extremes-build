@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {TileLayer, MapContainer, LayersControl, LayerGroup} from 'react-leaflet';
 import { Helmet } from 'react-helmet';
 import styled from "styled-components";
@@ -21,6 +21,7 @@ import TminLayer from './TminLayer';
 import TmaxLayer from "./TmaxLayer";
 import TminAnomLayer from "./TminAnomLayer";
 import TmaxAnomLayer from "./TmaxAnomLayer";
+import SpinningCircle from "../components/SpinningCircle";
 
 //use the correct marker icons
 let DefaultIcon = L.icon({
@@ -31,9 +32,17 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapBody = () => {
   const center = [0, 0];
+  const [ isLoaded, setIsLoaded ] = useState(true);
+
 
   return (
     <>
+      {(!isLoaded &&
+     <LoadingIconWrapper>
+     <SpinningCircle />
+       </LoadingIconWrapper>)}
+       {(isLoaded && 
+       <div>
     <Helmet>
       <link
         rel="stylesheet"
@@ -83,8 +92,8 @@ const MapBody = () => {
         noWrap={true}/>
       </LayersControl.BaseLayer>
         
-      <LayersControl.Overlay name="T-Min">
-        <TminLayer url={tmin}/>
+      <LayersControl.Overlay name="T-Min" >
+          <TminLayer url={tmin}/>
       </LayersControl.Overlay>
       
       <LayersControl.Overlay name="T-Max">
@@ -107,6 +116,8 @@ so must use Overlay, but then each Overlay layer is duplicated in options menu..
       <LeafletMyPosition/>
     </MapContainer>
     </ParentCont>
+    </div>
+       )}
   </>
   )
 } 
@@ -114,4 +125,12 @@ export default MapBody;
 
 const ParentCont = styled.div`
   background-color: #aad3df;
+`
+
+const LoadingIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0px;
+  padding-bottom: 0px;
 `

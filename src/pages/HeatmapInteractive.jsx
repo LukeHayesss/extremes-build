@@ -98,6 +98,7 @@ d3.csv(data2).then(function (data) {
             .attr("class", "hmlabel")
             .attr("text-anchor", "middle")
             .style("font-family", "rubik")
+            .style("font-weight", "600")
             .attr("transform", `translate(${x.bandwidth() / 2},${y.bandwidth() / 2})`);
         bar
             .append("text")

@@ -14,7 +14,8 @@ const SpinningCircle = () => {
 
 const SpinnerDiv = styled.div`
 width: 200px;
-height: 200px;
+height: 0px;
+z-index: 5000;
 svg{
     animation: rotate 1.5s linear infinite;
 

@@ -54,7 +54,7 @@ const handleClick = () => {
         
         <ContainerOne>
         <DetailCont>
-        <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        <BodyDeets>"Lorem ipsum dolor sit ameeet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
@@ -168,7 +168,7 @@ padding-bottom: 50px;
 
 const LineDateCont = styled.div`
 width: 50%;
-padding-left: 70px;
+padding-left: 50px;
 @media (max-width: 767px) {
   margin: auto;
   width: 90%;
