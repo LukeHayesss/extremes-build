@@ -14,10 +14,22 @@ code {
 
 .map {
   height: 80vh;
-  margin:auto;
+  margin: auto;
   padding: 0;
   width: 50%;
-}
+  border-bottom: 1px solid #696969;
+  border-right: 1px solid #696969;
+  border-left: 1px solid #696969;
+  /* border-top: 1px solid #696969; */
+  /* border-radius: 5px; */
+  /* box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38) */
+} 
+/* @media screen and (max-width: 896px) { 
+.map {
+  width: auto;
+}} */
+
+
 .leaflet-container {
   background: #aad3df !important;
   z-index: 1000;
@@ -180,10 +192,13 @@ stroke: #b22222;
 
 .nextTmin{
     fill:#0B3360;
-  
 }
 
 .nextTmax{
   fill:#b22222;
+}
 
+/* popup text size */
+.leaflet-popup-content {
+  font-size: 18px !important;
 }

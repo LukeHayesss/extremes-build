@@ -9,6 +9,7 @@ import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from 'leaflet';
 import LeafletMyPosition from "./LeafletMyPosition";
 import ResetViewControl from '@20tab/react-leaflet-resetview';
+import SpinningCircle from "../components/SpinningCircle";
 
 //data access
 import tmin from '../data/tmin.tiff';
@@ -21,7 +22,7 @@ import TminLayer from './TminLayer';
 import TmaxLayer from "./TmaxLayer";
 import TminAnomLayer from "./TminAnomLayer";
 import TmaxAnomLayer from "./TmaxAnomLayer";
-import SpinningCircle from "../components/SpinningCircle";
+
 
 //use the correct marker icons
 let DefaultIcon = L.icon({
@@ -50,7 +51,6 @@ const MapBody = () => {
       />
     </Helmet>
     <ParentCont>
-
     <MapContainer 
     className="map" 
     center={center} 
@@ -58,12 +58,8 @@ const MapBody = () => {
     scrollWheelZoom={false} 
     doubleClickZoom={true}>
      <PopupInfo/>
-     <ResetViewControl 
-     title="Reset View"
-     icon="↺"
-     />
+     <ResetViewControl title="Reset View" icon="↺"/>
          
-{/* menu for selecting layers */}
       <LayersControl position="topright">  
       
       <LayersControl.BaseLayer checked name="Base Map">
@@ -92,20 +88,22 @@ const MapBody = () => {
         noWrap={true}/>
       </LayersControl.BaseLayer>
         
-      <LayersControl.Overlay name="T-Min" >
+      <LayersControl.Overlay name="Minimum Temp">
           <TminLayer url={tmin}/>
       </LayersControl.Overlay>
       
-      <LayersControl.Overlay name="T-Max">
-        <TmaxLayer url={tmax}/>
+      <LayersControl.Overlay name="Maximum Temp">
+          <TmaxLayer url={tmax}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="T-Min Anom">
-        <TminAnomLayer url={tminanom}/>
+      <LayersControl.Overlay name="Minimum Temp Anomalies">
+          <TminAnomLayer url={tminanom}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="T-Max Anom">
-        <TmaxAnomLayer url={tmaxanom}/>
+      <LayersControl.Overlay name="Maximum Temp Anomalies">
+        {/* <LayerGroup> */}
+          <TmaxAnomLayer url={tmaxanom}/>
+        {/* </LayerGroup> */}
       </LayersControl.Overlay>
    
 {/* cant use LayersControl.Overlay for the layers cause they don't work well with Layergroup */}
@@ -124,7 +122,9 @@ so must use Overlay, but then each Overlay layer is duplicated in options menu..
 export default MapBody;
 
 const ParentCont = styled.div`
-  background-color: #aad3df;
+  /* background-color: #aad3df; */
+  background-color: #F8F5F1;
+
 `
 
 const LoadingIconWrapper = styled.div`

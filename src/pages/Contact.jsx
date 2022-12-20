@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Contact = () => {
     return (
         <Container>
@@ -38,7 +37,7 @@ width: 33%;
 height: auto;
 padding-top: 35px;
 font-weight: 600;
-text-align: justify;
+text-align: center;
 @media (max-width: 896px) {
     font-size: 38px;
     margin: auto;
@@ -54,7 +53,8 @@ width: 33%;
 height: auto;
 padding-top: 35px;
 font-weight: 600;
-text-align: justify;
+/* text-align: justify; */
+text-align: center;
 @media (max-width: 896px) {
     font-size: 38px;
     margin: auto;

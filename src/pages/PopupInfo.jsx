@@ -8,6 +8,7 @@ const PopupInfo = () => {
         click(e) {
             const newMarker = e.latlng
             setMarkers([...markers, newMarker]);
+            console.log(e.latlng, "info")
         },
     })
 

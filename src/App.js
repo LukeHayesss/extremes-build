@@ -47,14 +47,12 @@ const handleClick = () => {
 
         
         {/* <MoreInfo></MoreInfo> */}
-        <Button onClick={handleClick}><MoreInfo/></Button>
-        {/* hide the graphs on default, autoscroll into view when map clicked */}
-        
+        <Button onClick={handleClick}><MoreInfo/></Button>        
         <AutoScrollGraphs ref={ref}><Graphs/></AutoScrollGraphs>
         
         <ContainerOne>
         <DetailCont>
-        <BodyDeets>"Lorem ipsum dolor sit ameeet, consectetur adipiscing elit, 
+        <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
