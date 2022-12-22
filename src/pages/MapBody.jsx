@@ -51,16 +51,10 @@ const MapBody = () => {
       />
     </Helmet>
     <ParentCont>
-    <MapContainer 
-    className="map" 
-    center={center} 
-    zoom={2} 
-    scrollWheelZoom={false} 
-    doubleClickZoom={true}>
+    <MapContainer className="map" center={center} zoom={2} scrollWheelZoom={false} doubleClickZoom={true}>
      <PopupInfo/>
-     <ResetViewControl title="Reset View" icon="↺"/>
-         
-      <LayersControl position="topright">  
+      <ResetViewControl title="Reset View" icon="↺"/>
+       <LayersControl position="topright">  
       
       <LayersControl.BaseLayer checked name="Base Map">
         <TileLayer 
