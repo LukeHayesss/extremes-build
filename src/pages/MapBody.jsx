@@ -90,20 +90,14 @@ const MapBody = () => {
           <TmaxLayer url={tmax}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="Minimum Temp Anomalies">
+      <LayersControl.Overlay name="Minimum Temp <br>Anomalies">
           <TminAnomLayer url={tminanom}/>
       </LayersControl.Overlay>
 
-      <LayersControl.Overlay name="Maximum Temp Anomalies">
-        {/* <LayerGroup> */}
+      <LayersControl.Overlay name="Maximum Temp <br>Anomalies">
           <TmaxAnomLayer url={tmaxanom}/>
-        {/* </LayerGroup> */}
       </LayersControl.Overlay>
-   
-{/* cant use LayersControl.Overlay for the layers cause they don't work well with Layergroup */}
-{/* cant do each layer as baselayer cause then doesnt have geographical data, 
-so must use Overlay, but then each Overlay layer is duplicated in options menu... */}
-       
+      
       </LayersControl>
       <LeafletMyPosition/>
     </MapContainer>
