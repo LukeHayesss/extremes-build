@@ -32,16 +32,6 @@ let DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-// let map = L.map;
-// window.addEventListener('resize', function(event) {
-//     var width = document.documentElement.clientWidth;
-//     if (width < 896) {
-//       map.setZoom(0)
-//     } else {
-//       map.setZoom(2)
-//     }
-//   })
-
 const MapBody = () => {
   const center = [0, 0];
   const [ isLoaded, setIsLoaded ] = useState(true);
