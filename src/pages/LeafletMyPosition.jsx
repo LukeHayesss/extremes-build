@@ -4,6 +4,8 @@ import { useMapEvents } from "react-leaflet";
 import LeafletControl from "./LeafletControl";
 import { FaLocationArrow } from "react-icons/fa";
 import styled from "styled-components";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const LeafletMyPosition = ({ zoom = 17 }) => {
     const [loading, setLoading] = useState(false);
@@ -17,6 +19,7 @@ const LeafletMyPosition = ({ zoom = 17 }) => {
 
     return (
         <LeafletControl position={"bottomleft"}>
+          <Tippy content='Show Your Location' placement="right">
           <ActionIcon
             onClick={() => {
               setLoading(true);
@@ -29,6 +32,7 @@ const LeafletMyPosition = ({ zoom = 17 }) => {
               <FaLocationArrow size={17}/>
             </Icon>
           </ActionIcon>
+          </Tippy>
         </LeafletControl>
       );
     };

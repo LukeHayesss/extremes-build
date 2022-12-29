@@ -32,7 +32,7 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         return { tmax: kelvin2celsius(d.tmax), tmin: kelvin2celsius(d.tmin) }
     })
 
-    // Create variable of todays temperaturesure
+    // Create variable of todays temperatures
     const todayTempC = nextTemp.map(function (d) {
         return { tmax: kelvin2celsius(d.tmax), tmin: kelvin2celsius(d.tmin) }
     })
@@ -43,21 +43,15 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
     // Compute temperature ranges
     const temp_x = d3.extent(doyTempC, function (d) { return d.tmax; });
     const temp_n = d3.extent(doyTempC, function (d) { return d.tmin; });
-
     const temp_values = d3.range(Math.floor(temp_n[0]) - 5, Math.ceil(temp_x[1]) + 5, 1);
     const temp_range = d3.extent(temp_values)
 
     // Compute kernel density estimation
     const kde = kernelDensityEstimator(kernelEpanechnikov(1), temp_values);
-
-
     const density_x = kde(doyTempC.map(function (d) { return +d.tmax; }));
     const density_n = kde(doyTempC.map(function (d) { return +d.tmin; }));
-
     const dens_max = Math.max(d3.max(density_x, d => +d[1]), d3.max(density_n, d => +d[1]))
-
     const dens_range = d3.extent([0, dens_max])
-
 
     // add the x Axis
     const x = d3.scaleLinear()
@@ -78,7 +72,6 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
     svg.append("path")
         .attr("class", "pdf_curve_max")
         .datum(density_x)
-        // .style("fill", "darkGray")
         .style("shape-rendering", "crispEdges")
         .attr("d", d3.line()
             .curve(d3.curveBasis)
@@ -89,7 +82,6 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
     svg.append("path")
         .attr("class", "pdf_curve_min")
         .datum(density_n)
-        // .style("fill", "darkGray")
         .style("shape-rendering", "crispEdges")
         .attr("d", d3.line()
             .curve(d3.curveBasis)
@@ -122,7 +114,6 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .attr("y1", y(dens_range[0]))
         .attr("x2", x(todayTempC[0].tmin))
         .attr("y2", y(dens_range[1]));
-
 
     svg.append("text")
         .attr("y", x(todayTempC[0].tmin) - 5)  //<<== change your code here
@@ -220,7 +211,6 @@ Promise.all([d3.csv(data3), d3.csv(data4)])
         .text("Temperature (°C)");
 });
 
-
 // Function to compute density
 function kernelDensityEstimator(kernel, X) {
 return function (V) {
@@ -239,7 +229,6 @@ return function (v) {
 function kelvin2celsius(k) {
 return k - 273.15;
 }
-
 
 const RD3Component = rd3.Component;
 class KernelMaxMin extends React.Component {

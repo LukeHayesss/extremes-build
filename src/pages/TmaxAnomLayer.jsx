@@ -44,7 +44,7 @@ const TmaxAnomLayer = ({ url }) => {
                     });
             });
             return () => {
-                // container.removeLayer(geoTiffLayerRef.current);
+                container.removeLayer(geoTiffLayerRef.current);
             };
         }, [context, url, map]);
         return null;

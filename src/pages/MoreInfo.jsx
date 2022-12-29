@@ -7,9 +7,9 @@ const MoreInfo = () => {
         <Wrapper>
             <Container>
                 <Header>More Info</Header>
-                <Icon>
+                  <Icon>
                     <FaArrowCircleDown size={100} className="hvr-hang"/>
-                </Icon>
+                  </Icon>
             </Container>
             
         </Wrapper>

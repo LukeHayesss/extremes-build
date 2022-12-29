@@ -2,6 +2,7 @@
   "name": "extremes",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@20tab/react-leaflet-resetview": "^1.1.0",
     "@mantine/core": "^5.8.4",

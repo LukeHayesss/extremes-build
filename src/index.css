@@ -14,13 +14,53 @@ code {
 
 .map {
   height: 80vh;
-  margin:auto;
+  margin: auto;
   padding: 0;
-  width: 50%;
+  /* if fullscreen, do width 50% */
+  width: 100%;
+  border-bottom: 1px solid #696969;
+  border-right: 1px solid #696969;
+  border-left: 1px solid #696969;
+} 
+
+.mapMobile {
+  height: 90vh;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  border-bottom: 1px solid #696969;
+  border-right: 1px solid #696969;
+  border-left: 1px solid #696969;
+  border-top: 1px solid #696969;
 }
+@media screen and (max-width: 688px) and (min-width: 590px){
+  .mapMobile {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 689px){
+  .mapMobile {
+    width: 70%;
+  }
+}
+
+/* .mapTablet {
+  height: 75vh;
+  margin: auto;
+  padding: 0;
+  width: 57%;
+  border-bottom: 1px solid #696969;
+  border-right: 1px solid #696969;
+  border-left: 1px solid #696969;
+  border-top: 1px solid #696969; */
+  /* padding-top: 35px;
+  padding-bottom: 35px; */
+  /* transform: scale(1.3); */
+/* } */
+
 .leaflet-container {
   background: #aad3df !important;
-  z-index: 1000;
+  z-index: 998;
 }
 
 .tiles {
@@ -180,10 +220,38 @@ stroke: #b22222;
 
 .nextTmin{
     fill:#0B3360;
-  
 }
 
 .nextTmax{
   fill:#b22222;
-
 }
+
+/* popup text size */
+.leaflet-popup-content {
+  font-size: 18px !important;
+}
+
+.arrow {
+  margin-left: 10px;
+}
+
+
+/* //sticky navbar */
+/* .navbar {
+  display: flex;
+  justify-content: space-around;
+  background: url("./media/IconYellow.jpeg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 999;
+  height: 62px;
+  width: 100%;
+  background: rgba(14, 16, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+} */

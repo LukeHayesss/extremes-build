@@ -32,18 +32,8 @@ let DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-// let map = L.map;
-// window.addEventListener('resize', function(event) {
-//     var width = document.documentElement.clientWidth;
-//     if (width < 896) {
-//       map.setZoom(0)
-//     } else {
-//       map.setZoom(2)
-//     }
-//   })
-
-const MapBody = () => {
-  const center = [0, 0];
+const MapBodyMobile = () => {
+  const center = [0.0, 0.0];
   const [ isLoaded, setIsLoaded ] = useState(true);
 
   return (
@@ -61,7 +51,7 @@ const MapBody = () => {
       />
     </Helmet>
     <ParentCont>
-    <MapContainer className="map" center={center} zoom={2} scrollWheelZoom={false} doubleClickZoom={true}>
+    <MapContainer className="mapMobile" center={center} zoom={1} scrollWheelZoom={false} doubleClickZoom={true}>
       <PopupInfo/>
        <ResetViewControl title="Reset View" icon="↺"/>
         <LayersControl position="topright">
@@ -114,7 +104,7 @@ const MapBody = () => {
   </>
   )
 } 
-export default MapBody;
+export default MapBodyMobile;
 
 const ParentCont = styled.div`
   background-color: #F8F5F1;
