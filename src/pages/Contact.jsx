@@ -53,7 +53,6 @@ width: 33%;
 height: auto;
 padding-top: 35px;
 font-weight: 600;
-/* text-align: justify; */
 text-align: center;
 @media (max-width: 896px) {
     font-size: 38px;

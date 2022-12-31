@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
-// import Logo1 from '../media/logo-svg.svg';
 import Logo2 from '../media/logo-white2.png';
 
 const Footer = () => {
@@ -13,8 +12,8 @@ const Footer = () => {
     background: "#000000",
     paddingBottom: "25px",
     paddingTop: "29px",
-    borderTop: "1px solid #000000"
-
+    borderTop: "1px solid #000000",
+    backgroundImage: 'url(https://assets.website-files.com/5e870779d9def4583b128a66/5e870779e18b0edb3fa63c96_topography.svg)'
 }}>
       <div>
         <CompanyInfoContainer>
