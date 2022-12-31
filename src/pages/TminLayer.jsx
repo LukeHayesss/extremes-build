@@ -39,13 +39,13 @@ const TminLayer = ({ url }) => {
             geoTiffLayerRef.current = new GeoRasterLayer(options);
             container.addLayer(geoTiffLayerRef.current);
             // map.fitBounds(geoTiffLayerRef.current.getBounds());
-            })
-        })
+            });
+        });
         return () => {
             container.removeLayer(geoTiffLayerRef.current);
         };
     }, [context, url, map]);
-
+    
     return null;
 };
 
