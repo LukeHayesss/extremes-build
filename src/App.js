@@ -5,7 +5,7 @@ import BottomBar from './components/BottomBar';
 import Footer from './pages/Footer';
 import Logo2 from '../src/media/logo-white2.png';
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import ScrollToTop from './components/ScrollToTop';
 import MapBody from './pages/MapBody';
 import MoreInfo from './pages/MoreInfo';
@@ -20,12 +20,13 @@ import Contact from './pages/Contact';
 import KernelMaxMin from './pages/KernelMaxMin';
 import BackToTop from './components/BackToTop';
 import MapBodyMobile from './pages/MapBodyMobile';
-
-// implement autoscroll function
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import React from 'react';
 
 function App() {
+
+  const [details, setDetails] = useState({});
+  let params = useParams()
 
   // conditionally render the different sizes of map body to display, based on device size
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -35,12 +36,25 @@ function App() {
         window.addEventListener("resize", handleWindowResize)
         return () => window.removeEventListener("resize", handleWindowResize)
   }, [])
-  
+
+// implement autoscroll function  
 const ref = useRef(null);
 const handleClick = () => {
   ref.current?.scrollIntoView({behaviour: 'smooth'});
 }
   
+//need to fetch the data to dynamically update ''is this temp normal'' section
+useEffect(() => {
+  async function fetchData(name) {
+      const response = await fetch(`/recipe/${name}`) //update route here when finalized
+      const data = await response.json()
+      setDetails(data);
+      console.log(data, 'Check Data Working')
+  }
+  fetchData(params.name)
+}, [])
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -82,26 +96,29 @@ const handleClick = () => {
         
         <ContainerOne>
         <DetailCont>
-        <BodyDeets>"Lorem ipsum dolor sit ameit, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+          
+        <BodyDeets><SectionH1>Temperature Probability</SectionH1>These 
+          shades are the probability of a given temperature
+          to occur at this time of the year, where blue is for daily low
+          temperatures and red for daily high temperatures. Temperatures for
+          which the shade is higher are more probable and very unlikely
+          temperatures are represented by lower shades. A few bars are also
+          added and they represent the thresholds of the 5% coldest (5th 
+          perc) and warmest (95th perc) days. The central line indicates the
+          50th percentile which separates the coldest and the warmest half of
+          days.</BodyDeets>
           <KernelCont>
         <KernelMaxMin/>
         </KernelCont>
         </DetailCont>
         
         <DetailCont>
-        <BodyDeets>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+        <BodyDeets><SectionH1>Is This Temperature Normal?</SectionH1>In the 
+          next 24h we expect temperature to be in the range {details.Tmin} (low) and
+          {details.Tmax} (high). Thus, mean temperature will be {details.Tmean}, which is 
+          warmer than {details.ptile_tmean} of days at this location and this time 
+          of the year. Typically, days below the 5% or above the 95% are 
+          considered cold and hot extremes.</BodyDeets>
           <DoyCont>
         <DoyScatter/>
         </DoyCont>
@@ -109,29 +126,35 @@ const handleClick = () => {
         </ContainerOne>
 
         <MiniBorder/>
-        <LineHeader>Line with Date</LineHeader> 
+        <LineHeader>Day and Night</LineHeader> 
         <LineCont>
           <LineDateCont>
           <LineDate/>
           </LineDateCont>
-          <BodyDeets>"Lorem ipsum dolor sit ameit, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum."</BodyDeets>
+          <BodyDeets>Daily low temperatures usually occur at night and high temperatures 
+            during the central hours of the day. Mean daily temperature is a good 
+            indicator of how warm a day is, but perhaps a bit too simple. Looking into
+            low and high temperature separately give us a more complete picture. For 
+            example, it gives us information on whether the night was particularly cold
+            or the day scorching, which is not always reflected well in mean temperature. 
+            This is the typical range of temperatures at this location and its evolution 
+            throughout the year. Shades indicate the range between the 10th and the 90th 
+            percentile, which represents 80% of the days. Temperatures outside these ranges
+            may be regarded as extremes.</BodyDeets>
         </LineCont>
 
         <FullContainer>
-        <LineHeader>Interactive Heatmap</LineHeader>
-        <BodyDeetsFull>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum."</BodyDeetsFull>
+        <LineHeader>Temperature Heatmap</LineHeader>
+        <BodyDeetsFull>Heatmaps are a great way of visualizing how extreme the year has 
+            been so far. At a glance, we can get an idea of whether the year 
+            or a particular period has been particularly warm (red) or cold (blue). 
+            Each day has a number associated, which is the percentile of the 
+            temperature that day at this location and that time of the year. The 
+            percentile tells us the percentage of days that were colder. Thus, if a day 
+            has a 95, it was warmer than 95% of the days at that time of the year, which
+            is quite high. It is important to compare with days at the same time of the year 
+            to account for the effects of seasons and get a real idea of how warm the 
+            day was.</BodyDeetsFull>
           <HmapInteractiveCont>
         <HeatmapInteractive/>
         </HmapInteractiveCont>
@@ -140,14 +163,21 @@ const handleClick = () => {
         
         <FullContainerLight>
         <MiniBorder/>
-        <LineHeader>Heat and Cold Waves In 2022.</LineHeader>
-        <BodyDeetsFull>"Lorem ipsum doloor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo conseequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum."</BodyDeetsFull>
+        <LineHeader>Heat and Cold Waves</LineHeader>
+        <BodyDeetsFull>Heat and cold episodes tend to occur over multiple days. 
+          If these heat and cold episodes are particularly intense and extend 
+          over various days, their effects can be very adverse. That situation 
+          is often called a heat or cold wave. They can be measured using 
+          very different metrics. Here we use the Excess Heat Factor, which basically 
+          takes into account the temperature over the last 3 days and determines if it
+          has been particularly warm (>90th percentile). Then we also consider the 
+          temperature over the previous 30 days to account for possible acclimatization 
+          depending on whether the heat event was sudden or not. The index represent
+          how much temperature departs from what we consider to be extreme 
+          temperatures at this time of the year. The higher the index, the more extreme
+          the heat wave. We can also measure their duration or how often they’ve 
+          occurred. We have adapted the index to cold conditions (Cold Excess Factor) 
+          to measure cold waves as well.</BodyDeetsFull>
         <HmapCont>
         <HeatwaveHmap/>  
         </HmapCont>
@@ -248,7 +278,6 @@ padding-bottom: 50px;
 @media (max-width: 767px) {
   flex-direction: column;
 }
-
 `
 const FullContainer = styled.div`
 background-color: #EEEEEE;
@@ -276,7 +305,7 @@ padding-top: 30px;
 
 const BodyDeets = styled.div`
 font-family: 'Rubik', sans-serif;
-font-size: 26px;
+font-size: 28px;
 flex: 1 33%;
 width: 33%;
 height: auto;
@@ -295,7 +324,7 @@ font-weight: 300;
 
 const BodyDeetsFull = styled.div`
 font-family: 'Rubik', sans-serif;
-font-size: 26px;
+font-size: 28px;
 display: flex;
 height: auto;
 margin: 0px 90px 30px 90px;
@@ -311,8 +340,12 @@ text-align: center;
   font-size: 16px;
 }
 `
-
+//main header
 const Wrapper = styled.div`
+  /* position: fixed;
+  width: 100%;
+  z-index: 5000;
+  height: 150px; */
   background-color: #000000;
   color: #fff;
   border-bottom: 1px solid #E0E0E0;
@@ -490,6 +523,17 @@ cursor: pointer;
 }
 @media (max-width: 896px) {
   display: none;
+}
+`
+
+const SectionH1 = styled.div`
+font-size: 38px;
+font-weight: 600;
+font-family: 'Rubik', sans-serif;
+margin-bottom: 25px;
+@media (max-width: 1100px) {
+  text-align: center;
+  font-size: 38px;
 }
 `
 export default App;
