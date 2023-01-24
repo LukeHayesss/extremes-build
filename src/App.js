@@ -133,7 +133,7 @@ useEffect(() => {
           </LineDateCont>
           <BodyDeets>Daily low temperatures usually occur at night and high temperatures 
             during the central hours of the day. Mean daily temperature is a good 
-            indicator of how warm a day is, but perhaps a bit too simple. Looking into
+            indicator of how warm a day is, but perhaps a bit <i>too</i> simple. Looking into
             low and high temperature separately give us a more complete picture. For 
             example, it gives us information on whether the night was particularly cold
             or the day scorching, which is not always reflected well in mean temperature. 
