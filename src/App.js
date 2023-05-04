@@ -45,13 +45,13 @@ const handleClick = () => {
   
 //need to fetch the data to dynamically update ''is this temp normal'' section
 useEffect(() => {
-  async function fetchData(name) {
-      const response = await fetch(`/recipe/${name}`) //update route here when finalized
-      const data = await response.json()
-      setDetails(data);
-      console.log(data, 'Check Data Working')
-  }
-  fetchData(params.name)
+//   async function fetchData(name) {
+//       const response = await fetch(`/recipe/${name}`) //update route here when finalized
+//       const data = await response.json()
+//       setDetails(data);
+//       console.log(data, 'Check Data Working')
+//   }
+//   fetchData(params.name)
 }, [])
 
 
@@ -72,14 +72,14 @@ useEffect(() => {
         <MapHolder>
           <MapLeft>
             <HeaderTitle>
-              Site Title
+              Welcome
             </HeaderTitle>
             <Subtitle>
-              Punchy, compelling subtitle that describes
-              what this site does, and what a user should
-              do upon landing here.
+              Click anywhere on the map to load 50 years worth of 
+              interactive data showing extreme weather events for 
+              that specific latitude & longitude.
             </Subtitle>
-            <TitleButton>Call to action<span class="arrow">→</span></TitleButton>
+            <TitleButton>More Info<span class="arrow">→</span></TitleButton>
           </MapLeft>
 
           <MapRight>
@@ -96,7 +96,6 @@ useEffect(() => {
         
         <ContainerOne>
         <DetailCont>
-          
         <BodyDeets><SectionH1>Temperature Probability</SectionH1>These 
           shades are the probability of a given temperature
           to occur at this time of the year, where blue is for daily low
